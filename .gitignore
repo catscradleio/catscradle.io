@@ -1,0 +1,8 @@
+# Ignore Node modules
+/node_modules
+
+# Ignore Mongoose keys
+/config/keys.js
+
+# Ignore OS X garbage
+.DS_Store

@@ -1,0 +1,55 @@
+{
+  "name": "catscradle.io",
+  "version": "1.0.0",
+  "description": "Play cat's cradle online",
+  "main": "index.js",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "express": "^4.16.4",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.5.7",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
+    "validator": "^10.11.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/catscradleio/catscradle.io.git"
+  },
+  "keywords": [
+    "cat's",
+    "cradle",
+    "online",
+    "game"
+  ],
+  "contributors": [
+    {
+      "name": "Yucho Ho",
+      "email": "yucho.ho@gmail.com",
+      "url": "https://yuchoho.com"
+    },
+    {
+      "name": "Victoria Joh",
+      "email": "vjohkv@gmail.com",
+      "url": "https://vhjoh.com"
+    },
+    {
+      "name": "Nhat Do",
+      "email": "nhat.do277@gmail.com"
+    },
+    {
+      "name": "Demetri Sakellaropoulos",
+      "email": "demetri.sakellaropoulos@gmail.com"
+    }
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/catscradleio/catscradle.io/issues"
+  },
+  "homepage": "https://github.com/catscradleio/catscradle.io#readme"
+}
