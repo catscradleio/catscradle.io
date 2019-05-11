@@ -14,11 +14,17 @@
     "validator": "^10.11.0"
   },
   "devDependencies": {
-    "nodemon": "^1.19.0"
+    "@babel/core": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.5",
+    "nodemon": "^1.19.0",
+    "webpack": "^4.31.0"
   },
   "scripts": {
     "server": "nodemon app.js",
-    "start": "node app.js"
+    "start": "node app.js",
+    "build": "webpack --mode production"
   },
   "repository": {
     "type": "git",
@@ -31,28 +37,15 @@
     "game"
   ],
   "contributors": [
-    {
-      "name": "Yucho Ho",
-      "email": "yucho.ho@gmail.com",
-      "url": "https://yuchoho.com"
-    },
-    {
-      "name": "Victoria Joh",
-      "email": "vjohkv@gmail.com",
-      "url": "https://vhjoh.com"
-    },
-    {
-      "name": "Nhat Do",
-      "email": "nhat.do277@gmail.com"
-    },
-    {
-      "name": "Demetri Sakellaropoulos",
-      "email": "demetri.sakellaropoulos@gmail.com"
-    }
+    "Yucho Ho <yucho.ho@gmail.com> (https://yuchoho.com)",
+    "Victoria Joh <vjohkv@gmail.com> (https://vhjoh.com)",
+    "Nhat Do <nhat.do277@gmail.com>",
+    "Demetri Sakellaropoulos <demetri.sakellaropoulos@gmail.com>"
   ],
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/catscradleio/catscradle.io/issues"
   },
-  "homepage": "https://github.com/catscradleio/catscradle.io#readme"
+  "homepage": "https://github.com/catscradleio/catscradle.io#readme",
+  "author": ""
 }
