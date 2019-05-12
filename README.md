@@ -1,7 +1,8 @@
 # catscradle.io
 
 
-Check the script section of webpack for general commands some info. 
+Check the script section of webpack for general commands.
+Can run scripts with npm run-script "scriptname"
 
 Backend -
   server.js lives there. 
