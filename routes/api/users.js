@@ -6,15 +6,24 @@ const keys = require('../../config/keys')
 const passport = require('passport');
 
 const User = require('../../models/User');
+const validateRegisterInput = require('../../validation/register');
+const validateLoginInput = require('../../validation/login');
 
 router.post('/register', (req, res) => {
-  const { email } = req.body;
+  const { errors, isValid } = validateRegisterInput(req.body);
+
+  if(!isValid) {
+    return res.status(400).json(errors);
+  }
+
+  const { handle, email, password } = req.body;
   User.findOne({ email })
     .then(user => {
       if(user) {
-        return res.status(400).json({ email: 'Email already exists' });
+        errors.email = 'Email already exists';
+        return res.status(400).json(errors);
       }
-      const { handle, email, password } = req.body;
+
       const newUser = new User({ handle, email, password });
 
       bcrypt.genSalt(10, (err, salt) => {
@@ -31,11 +40,18 @@ router.post('/register', (req, res) => {
 });
 
 router.post('/login', (req, res) => {
+  const { errors, isValid } = validateLoginInput(req.body);
+
+  if(!isValid) {
+    return res.status(400).json(errors);
+  }
+
   const { email, password } = req.body;
   User.findOne({ email })
     .then(user => {
       if(!user) {
-        return res.status(404).json({ email: 'Email does not exist' });
+        errors.email = 'Email does not exist';
+        return res.status(404).json(errors);
       }
       bcrypt.compare(password, user.password)
         .then(isMatch => {
