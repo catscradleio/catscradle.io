@@ -4,10 +4,9 @@
 const express = require('express');
 const app = express();
 const port = process.env.PORT || 5000;
-app.get('/', (req, res) => res.send('Hello World'));
 
 /**
- * Connect to MongoDB
+ * Initialize mongoose
  */
 const mongoose = require('mongoose');
 const db = require('./config/keys').mongoURI;
@@ -17,8 +16,12 @@ mongoose
   .catch(err => console.log(err));
 
 /**
- * Configure express
+ * Middleware
  */
+const passport = require('passport');
+app.use(passport.initialize());
+require('./config/passport')(passport);
+
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -30,6 +33,6 @@ const users = require('./routes/api/users');
 app.use('/api/users', users);
 
 /**
- * Run express
+ * Run Express
  */
 app.listen(port, () => console.log(`Server is running on port ${port}`));
