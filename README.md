@@ -1,6 +1,8 @@
 ## catscradle.io
 
 ### Background and Overview
+Cat's Cradle is a classic game played with a simple string tied in a loop. Many complex and beautiful designs can come out of manipulation of the string using just human hands. We are building an virtual version of Cat's Cradle that will exceed human limitations and let users construct 3D designs that are only limited by their imaginations. The controls and interface will be intuitive and easy to learn.
+
 
 ### Functionality and MVP
 - [x] User auth
