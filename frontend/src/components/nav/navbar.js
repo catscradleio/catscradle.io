@@ -1,6 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
-import './navbar.css'
+import { Link } from 'react-router-dom';
+import './navbar.css';
+import styles from './navbar.module.css';
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -27,9 +28,9 @@ class NavBar extends React.Component {
         );
       } else {
         return (
-            <div>
-                <Link to={'/signup'}>Signup</Link>
-                <Link to={'/login'}>Login</Link>
+            <div className={styles['navbuttonContainer']}>
+              <Link className={styles['buttonSignup']} to={'/signup'}>Signup</Link>
+              <Link className={styles['buttonLogin']} to={'/login'}>Login</Link>
             </div>
         );
       }
@@ -38,8 +39,10 @@ class NavBar extends React.Component {
   render() {
       return (
         <div>
-            <h1>Create Cradle</h1>
-            { this.getLinks() }
+          <div className={styles['navbarContainer']}>
+              <h1 className={styles['appName']}>CatsCradle.io</h1>
+              { this.getLinks() }
+          </div>
         </div>
       );
   }

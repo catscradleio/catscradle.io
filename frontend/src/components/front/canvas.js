@@ -1,5 +1,7 @@
 import React from 'react';
 import * as THREE from 'three';
+import styles from './canvas.module.css';
+
 
 
 
@@ -17,8 +19,9 @@ class Canvas extends React.Component {
         this.scene.add(cube);
     }
     componentDidMount() {
-        const width = this.mount.clientWidth;
+        const width = this.mount.clientWidth/1.1;
         const height = this.mount.clientHeight;
+
         this.scene = new THREE.Scene();
         this.camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
         this.renderer = new THREE.WebGLRenderer({ antialias: true });
@@ -57,13 +60,15 @@ class Canvas extends React.Component {
     render() {
         return (
             <div>
-                <div
-                    id="boardCanvas"
-                    style={{ width: "80vw", height: "40vw" }}
+                <div className={styles['canvasContainer']}> 
+                <h1>Untitled demo</h1>
+                <h3>A cradle by anonymous</h3>
+                <div className={styles['canvas']}
                     ref={mount => {
                         this.mount = mount;
                     }}
                 />
+                </div>
             </div>
         );
     }
