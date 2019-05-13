@@ -1,10 +1,11 @@
 .buttonNav {
-    background: #75A631;
+    background: #357784;
     color: white;
-    padding: 10px;
+    padding: 7.5px 15px;
     border-radius: 25px; 
     font-weight: bold;
     margin-left: 10px;
+    font-size: 12px;
 }
 
 .buttonSignup {
@@ -29,7 +30,7 @@
 
 .navbarContainer {
     margin: 0 auto;
-    width: 1080px;
+    width: 860px;
 }
 
 .appName {

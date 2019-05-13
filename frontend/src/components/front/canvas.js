@@ -19,8 +19,8 @@ class Canvas extends React.Component {
         this.scene.add(cube);
     }
     componentDidMount() {
-        const width = this.mount.clientWidth/1.1;
-        const height = this.mount.clientHeight;
+        const width = 650;
+        const height = 400;
 
         this.scene = new THREE.Scene();
         this.camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);

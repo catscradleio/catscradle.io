@@ -2,6 +2,7 @@ import React from 'react';
 import Canvas from './canvas';
 import styles from './front.module.css';
 import NavbarContainer from '../nav/navbar-container';
+import SessionModal from './session-modal';
 
 class Front extends React.Component {
 
@@ -16,6 +17,7 @@ class Front extends React.Component {
             <p>Copyright &copy; 2019</p> 
         </footer>
         </div>
+        <SessionModal />
       </div>
     );
   }
