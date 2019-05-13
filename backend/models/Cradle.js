@@ -6,8 +6,8 @@ const CradleSchema = new Schema({
     type: String
   },
   creator: {
-    type: mongoose.Schema.ObjectId,
-    ref: 'User'
+    type: Schema.Types.ObjectId,
+    ref: 'users'
   },
   date: {
     type: Date,
