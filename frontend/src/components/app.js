@@ -12,8 +12,8 @@ import SignupFormContainer from './session/signup-form-container';
 const App = () => {
   return (
     <>
-      <img src={logo} className="App-logo" alt="logo" />
-      <NavBarContainer />
+      {/* <img src={logo} className="App-logo" alt="logo" /> */}
+      {/* <NavBarContainer /> */}
       <Switch>
         <AuthRoute exact path="/" component={Front} />
         <AuthRoute exact path="/login" component={LoginFormContainer} />
