@@ -1,4 +1,4 @@
-import {getCradles, getCradle, saveCradle} from '../util/cradle_api_util';
+import {getCradles, getCradle, getUserCradles, saveCradle} from '../util/cradle_api_util';
 
 export const RECEIVE_CRADLES = "RECEIVE_CRADLES";
 export const RECEIVE_CRADLE = "RECEIVE_CRADLE";
@@ -15,6 +15,12 @@ export const receiveCradle = (cradle) => ({
 
 export const fetchCradles = () => dispatch => (
   getCradles()
+    .then(cradles => dispatch(receiveCradles(cradles)))
+    .catch(err => console.log(err))
+);
+
+export const fetchUserCradles = (id) => dispatch => (
+  getUserCradles(id)
     .then(cradles => dispatch(receiveCradles(cradles)))
     .catch(err => console.log(err))
 );
