@@ -16,7 +16,12 @@ const UserSchema = new Schema({
   },
   date: {
     type: Date,
-    default: Date.now
+  },
+  friends: {
+    type: Array,
+  },
+  liked_cradles: {
+    type: Array,
   }
 });
 
