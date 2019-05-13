@@ -35,6 +35,9 @@ app.use(bodyParser.json());
 const users = require('./routes/api/users');
 app.use('/api/users', users);
 
+const cradles = require('./routes/api/cradles');
+app.use('/api/cradles', cradles);
+
 /**
  * Run Express
  */
