@@ -1,20 +1,29 @@
 # catscradle.io
 
+## Background and Overview
 
-Check the script section of webpack for general commands.
-Can run scripts with npm run-script "scriptname"
+## Functionality and MVP
+- [ ] User auth
+- [ ] Sharing cat's cradles with other users
+- [ ] Intuitive, stress-free cradle designing UI/UX
+- [ ] Production README
 
-Backend -
-  server.js lives there. 
-    Manages mongo and express + routes. 
-   models should also live there.
+## Technologies and Technical Challenges
+### Technologies
+- MERN stack
+- Three.js
+- CSS modules
 
-Public -
-  has index.html and bundle.js
- 
-src -
-  has the files that will be compiled into bundle.js, css, js, etc.
+### Technical Challenges
+- Geographical and physical calculations of cat's cradle
+- Designing intuitive controls and UI for designing cat's cradle
 
+## Group Members and Work Breakdown
+Yucho Ho, Victoria Joh, Nhat Do, Demetri Sakellaropoulos
 
-Resource for slightly more modern MERN than the course covers.
-https://codingthesmartway.com/the-mern-stack-tutorial-building-a-react-crud-application-from-start-to-finish-part-1/
+## Implementation Timeline
+#### Day 1
+#### Day 2
+#### Day 3
+#### Day 4
+#### Day 5
