@@ -9,6 +9,12 @@ router.get('/', (req, res) => {
     .catch(err => res.status(404).json({ noCradlesFound: 'No cradles found' }));
 });
 
+router.get('/user/:user_id', (req, res) => {
+  Cradle.find({creator: req.params.user_id})
+    .then(cradles => res.json(cradles))
+    .catch(err => res.status(404).json({ noCradlesFound: 'No cradles found from that user'}));
+});
+
 router.get('/:id', (req, res) => {
   Cradle.findById(req.params.id)
     .then(cradle => res.json(cradle))
@@ -24,8 +30,7 @@ router.post('/',
     const newCradle = new Cradle({
       title: req.body.title,
       creator: req.user.id
-    });
-    console.log(req.user.id);
+    }); 
 
 
     newCradle.save().then(cradle => res.json(cradle));
