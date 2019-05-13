@@ -24,8 +24,7 @@ router.post('/',
     const newCradle = new Cradle({
       title: req.body.title,
       creator: req.user.id
-    });
-    console.log(req.user.id);
+    }); 
 
 
     newCradle.save().then(cradle => res.json(cradle));
