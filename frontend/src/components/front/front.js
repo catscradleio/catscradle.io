@@ -16,6 +16,7 @@ class Front extends React.Component {
             <p>Copyright &copy; 2019</p> 
         </footer>
         </div>
+        {/* <SessionModal /> */}
       </div>
     );
   }
