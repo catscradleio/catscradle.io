@@ -78,7 +78,6 @@ class SessionModal extends React.Component {
         }
     }
 
-  
 
     hideModal(){
         let modal = document.getElementById('sessionModalContainer')

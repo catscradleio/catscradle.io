@@ -1,6 +1,6 @@
 import React from 'react';
 import NavbarContainer from '../nav/navbar-container';
-import styles from '../nav/navbar.module.css';
+import styles from '../feed/feed.module.css';
 import { withRouter } from 'react-router';
 
 class Feed extends React.Component {
