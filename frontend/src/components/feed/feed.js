@@ -2,6 +2,7 @@ import React from 'react';
 import NavbarContainer from '../nav/navbar-container';
 import styles from '../feed/feed.module.css';
 import { withRouter } from 'react-router';
+import frontStyles from '../front/front.module.css';
 
 class Feed extends React.Component {
 
@@ -10,7 +11,7 @@ class Feed extends React.Component {
             <div className={styles['feedBodyContainer']}>
                 <NavbarContainer />
 
-                <div className={styles['frontFooterContainer']}>
+                <div className={frontStyles['frontFooterContainer']}>
                     <footer>
                         <p>Copyright &copy; 2019</p>
                     </footer>
