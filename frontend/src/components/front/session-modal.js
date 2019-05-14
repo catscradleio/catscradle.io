@@ -19,7 +19,7 @@ class SessionModal extends React.Component {
 
     pickModal() {
 
-        if (this.props.formType == true) {
+        if (this.props.formType == 'signup') {
             return (
                 <div className={styles['sessionModal']}>
                 <div className={styles['sessionSpacer']}></div>
@@ -51,7 +51,7 @@ class SessionModal extends React.Component {
     getModal(){
         if (this.props.modal){
             return(
-                <div id='sessionModalContainer' className={styles['sessionModalContainer']}>
+            <div id='sessionModalContainer' className={styles['sessionModalContainer']}>
             {this.pickModal()}
         </div>
             )
@@ -59,6 +59,8 @@ class SessionModal extends React.Component {
             return (<></>)
         }
     }
+
+  
 
     hideModal(){
         let modal = document.getElementById('sessionModalContainer')

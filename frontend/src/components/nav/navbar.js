@@ -42,13 +42,32 @@ class NavBar extends React.Component {
         return (
             <div className={styles['navbuttonContainer']}>
               <div 
-                  onClick={() => this.setState({modal: true, formType: false})}
+                  onClick={() => this.showModalSignup()}
                   className={styles['buttonSignup']}>Signup</div>
-            <div onClick={() => this.setState({ modal: true, formType: true })}
+            <div onClick={() => this.showModalLogin()}
               className={styles['buttonLogin']}>Login</div>
             </div>
         );
       }
+  }
+
+  showModalSignup(){
+    this.setState({ modal: true, formType: 'signup' })
+    let modal = document.getElementById('sessionModalContainer')
+    if (!modal) {
+      return null
+    }
+    modal.style.display = 'block'
+
+  }
+
+  showModalLogin() {
+    this.setState({ modal: true, formType: 'login' })
+    let modal = document.getElementById('sessionModalContainer')
+    if (!modal) {
+      return null
+    }
+      modal.style.display = 'block'
   }
 
   render() {
