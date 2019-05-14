@@ -1,5 +1,5 @@
-const express = require('express');
-const users = express.Router();
+const users = require('express').Router();
+const cradles = require('./cradles');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const keys = require('../../config/keys');
@@ -82,5 +82,16 @@ users.get('/current', passport.authenticate('jwt', { session: false }), (req, re
   const { id, handle, email } = req.user;
   res.json({ id, handle, email });
 });
+
+users.get('/:userId', function(req, res, next) {
+  let userId = req.params.userId;
+  res.send(userId);
+});
+
+users.use('/:userId/cradles', function(req, res, next){
+  req.userId = req.params.userId;
+  next()
+}, cradles);
+
 
 module.exports = users;
