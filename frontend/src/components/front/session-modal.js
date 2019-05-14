@@ -71,10 +71,10 @@ class SessionModal extends React.Component {
 
             return (
                 <>
-                {this.getModal()}
                 <div onClick={() => this.hideModal()}
                 className={styles['modalCover']}>
                 </div>
+                {this.getModal()}
                 </>
             );
         } 
