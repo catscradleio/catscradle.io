@@ -19,7 +19,7 @@ class SessionModal extends React.Component {
 
     pickModal() {
 
-        if (this.props.formType == 'signup') {
+        if (this.props.formType == 'login') {
             return (
                 <div className={styles['sessionModal']}>
                 <div className={styles['sessionSpacer']}></div>
@@ -70,11 +70,12 @@ class SessionModal extends React.Component {
     render() {
 
             return (
+                <>
+                {this.getModal()}
                 <div onClick={() => this.hideModal()}
                 className={styles['modalCover']}>
-                
-                    {this.getModal()}
                 </div>
+                </>
             );
         } 
 }

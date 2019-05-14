@@ -1,6 +1,7 @@
 import React from 'react';
 import { Switch } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route-util';
+import Feed from './feed/feed';
 import logo from '../logo.svg';
 import './app.css';
 
@@ -16,8 +17,9 @@ const App = () => {
       {/* <NavBarContainer /> */}
       <Switch>
         <AuthRoute exact path="/" component={Front} />
-        <AuthRoute exact path="/login" component={LoginFormContainer} />
-        <AuthRoute exact path="/signup" component={SignupFormContainer} />
+        <ProtectedRoute path='/tweets' component={Feed} />
+        {/* <AuthRoute exact path="/login" component={LoginFormContainer} /> */}
+        {/* <AuthRoute exact path="/signup" component={SignupFormContainer} /> */}
       </Switch>
     </>
   );

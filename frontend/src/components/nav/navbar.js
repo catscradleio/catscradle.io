@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import './navbar.css';
 import styles from './navbar.module.css';
 import SessionModal from '../front/session-modal';
+import { withRouter } from 'react-router';
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -19,7 +20,7 @@ class NavBar extends React.Component {
 
   logoutUser(e) {
       e.preventDefault();
-      this.props.logout();
+        this.props.logout();
   }
 
   showModal(){ 
@@ -83,4 +84,4 @@ class NavBar extends React.Component {
   }
 }
 
-export default NavBar;
+export default withRouter(NavBar);
