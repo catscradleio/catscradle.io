@@ -1,9 +1,9 @@
 import React from 'react';
 import NavbarContainer from '../nav/navbar-container';
-import styles from '../nav/navbar.module.css';
+import styles from '../feed/feed.module.css';
 import { withRouter } from 'react-router';
+import frontStyles from '../front/front.module.css';
 import CradlesIndexContainer from '../cradles/cradles_index_container';
-
 
 class Feed extends React.Component {
 
@@ -14,7 +14,7 @@ class Feed extends React.Component {
 
                 <CradlesIndexContainer />
 
-            <div className={styles['frontFooterContainer']}>
+                <div className={frontStyles['frontFooterContainer']}>
                     <footer>
                         <p>Copyright &copy; 2019</p>
                     </footer>

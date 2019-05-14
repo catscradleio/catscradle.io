@@ -59,10 +59,10 @@ class Canvas extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className={styles['canvasBodyContainer']}>
                 <div className={styles['canvasContainer']}> 
-                <h1>Untitled demo</h1>
-                <h3>A cradle by anonymous</h3>
+                <h2 className={styles["cradleTitle"]}>Untitled demo</h2>
+                <h6 className={styles["cradleAuthor"]}>A CRADLE BY ANONYMOUS</h6>
                 <div className={styles['canvas']}
                     ref={mount => {
                         this.mount = mount;

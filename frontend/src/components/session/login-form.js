@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import styles from '../front/session.module.css';
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -63,19 +64,23 @@ class LoginForm extends React.Component {
       <div>
         <form onSubmit={this.handleSubmit}>
           <div>
-            <input type="text"
+            <input className={styles['sessionFormInput']} type="text"
               value={this.state.email}
               onChange={this.update('email')}
               placeholder="Email"
             />
             <br />
-            <input type="password"
+            <input className={styles['sessionFormInput']} type="password"
               value={this.state.password}
               onChange={this.update('password')}
               placeholder="Password"
             />
             <br />
-            <input type="submit" value="Submit" />
+
+            <div className={styles['sessionButtonContainer']}>
+              <div><input className={styles['sessionSubmitButton']} type="submit" value="Login" /></div>
+              <div className={styles['forgotPass']}><span >forgot password?</span></div>
+            </div>
             {this.renderErrors()}
           </div>
         </form>

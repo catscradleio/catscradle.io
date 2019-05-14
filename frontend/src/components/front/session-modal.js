@@ -8,11 +8,14 @@ class SessionModal extends React.Component {
     constructor(props) {
         super(props);
         this.switchModal = this.switchModal.bind(this);
+        this.state = {
+            formType: this.props.formType
+        };
     }
 
     switchModal() {
-        (this.state.modal == true) ?
-            this.setState({ modal: false }) : this.setState({ modal: true })
+        (this.state.formType == 'login') ?
+            this.setState({ modal: 'signup' }) : this.setState({ modal: 'login' })
     }
 
 
@@ -22,26 +25,41 @@ class SessionModal extends React.Component {
         if (this.props.formType == 'login') {
             return (
                 <div className={styles['sessionModal']}>
-                <div className={styles['sessionSpacer']}></div>
-                <div>
-                    <div className={styles['sessionModalOptions']}>
-                        <span>Signin or </span>
-                        <span onClick={() => this.switchModal()}
-                              className={styles['changeSignup']}>Signup</span>
+                    <div className={styles['sessionSpacer']}>
+                            <img className={styles['sessionImage']} src="https://2.bp.blogspot.com/-pHg-o9baXXg/XNr6R0UVYzI/AAAAAAAABVI/u8KThDDvp-chKM7clVdBkH8c5JjVB9WDQCLcBGAs/s320/placeholder-02.png"/>
                     </div>
-                    <div className={styles['sessionModalContents']}><LoginFormContainer /></div>
-                </div>
+
+                    <div className={styles['sessionFormContainer']}>
+
+                        <div className={styles['sessionModalOptions']}>
+                            <span>Sign in or </span>
+                            <span onClick={() => this.switchModal()}
+                                className={styles['changeSignup']}>Sign up</span>
+                        </div>
+                        <div className={styles['sessionModalContents']}><LoginFormContainer /></div>
+                    </div>
+
                 </div>
             );
         } else {
             return (
                 <div className={styles['sessionModal']}>
-                    <div className={styles['sessionModalOptions']}>
-                        <span>Signup or </span> 
-                        <span onClick={() => this.switchModal()}
-                              className={styles['changeSignin']}>Signin</span>
-                    </div>
+
+                    <div className={styles['sessionFormContainerOverride']}>
+                        <div className={styles['sessionModalOptions']}>
+                            <span>Sign up or </span> 
+                            <span onClick={() => this.switchModal()}
+                                className={styles['changeSignin']}>Sign in</span>
+                        </div>
                     <div className={styles['sessionModalContents']}><SignupFormContainer /></div>
+                    </div>
+
+
+
+                    <div className={styles['sessionSpacerOverride']}>
+                        <img className={styles['sessionImage']} src="https://2.bp.blogspot.com/-pHg-o9baXXg/XNr6R0UVYzI/AAAAAAAABVI/u8KThDDvp-chKM7clVdBkH8c5JjVB9WDQCLcBGAs/s320/placeholder-02.png" />
+                    </div>
+                    
                 </div>
             );
         }
@@ -52,15 +70,14 @@ class SessionModal extends React.Component {
         if (this.props.modal){
             return(
             <div id='sessionModalContainer' className={styles['sessionModalContainer']}>
-            {this.pickModal()}
-        </div>
+                {this.pickModal()}
+            </div>
             )
         } else {
             return (<></>)
         }
     }
 
-  
 
     hideModal(){
         let modal = document.getElementById('sessionModalContainer')

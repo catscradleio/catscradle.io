@@ -1,4 +1,3 @@
-
 .canvas {
     width: 80vw;
     height: 40vw;
@@ -6,6 +5,15 @@
 
 .canvasContainer {
     width: 860px; 
-    height: 700px; 
+    height: 600px; 
     margin: 0 auto;
+}
+
+.cradleTitle, .cradleAuthor {
+    line-height: 0;
+    color: #BABABA;
+}
+
+.canvasBodyContainer {
+    margin-top: 50px;
 }

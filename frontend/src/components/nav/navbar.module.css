@@ -6,6 +6,12 @@
     font-weight: bold;
     margin-left: 10px;
     font-size: 12px;
+    border: none;
+    cursor: pointer;
+}
+
+.buttonNav:hover {
+    background: #154B56;
 }
 
 .buttonSignup {
@@ -27,6 +33,7 @@
 .navbuttonContainer {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 
 }
 
@@ -34,9 +41,33 @@
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
-    width: 860px;
+    width: 1080px;
+}
+
+.appNameContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .appName {
     color: white;
+}
+
+.logo {
+    height: 65px;
+    width: 65px;
+    margin-right: 7.5px;
+}
+
+.navLink a{
+    color: white;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+    margin-right: 15px;
+}
+
+.navLink a:hover {
+    color: #F7DDBB;
 }
