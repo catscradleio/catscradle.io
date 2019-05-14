@@ -29,25 +29,70 @@
 }
 
 .sessionModalContents {
-
-    border: 1px solid red;
+    margin-top: 30px;
     align-content: center;
 }
 
 .sessionModalOptions {
     margin: 0 auto;
-    border: 1px solid red;
-    font-size: 30px;
+    font-size: 25px;
 }
 
 .changeSignin, .changeSignup {
-    font-weight: bold;
+    font-weight: 500;
 }
 
 .changeSignin {
-    color: blue;
+    color: #357784;
 }
 
 .changeSignup {
-    color: orange;
+    color: #CB822A;
+}
+
+.sessionImage {
+
+    width: 100%;
+    height: 100%;
+}
+
+.sessionFormContainer {
+    margin: 0 auto;
+    margin-top: 15%;
+}
+
+/* Login Form + Signup Forms */
+.sessionFormInput {
+    border: none;
+    border-bottom: 1px solid lightgray;
+    margin-bottom: 10px;
+    width: 100%;
+    font-size: 12px;
+}
+
+.sessionSubmitButton {
+    width: 100%;
+    margin: 0 auto;
+    color: white;
+    background: #357784;
+    padding: 7px;
+    font-weight: 500;
+    border-radius: 25px;
+    margin-top: 25px;
+    font-size: 12px;
+}
+
+.forgotPass {
+    font-size: 10px;
+    color: gray;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    margin-top: 7.5px;
+}
+
+.sessionButtonContainer {
+    margin: 0 auto;
+    width: 95%;
+
 }

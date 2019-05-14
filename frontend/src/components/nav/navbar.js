@@ -13,8 +13,8 @@ class NavBar extends React.Component {
     this.showModal = this.showModal.bind(this);
 
     this.state = {
-      modal: false,
-      formType: true
+      modal: true,
+      formType: 'signup'
     };
   }
 
