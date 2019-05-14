@@ -33,9 +33,9 @@ class NavBar extends React.Component {
       if (this.props.loggedIn) {
         return (
             <div>
-                <Link to={'/tweets'}>All Cradles</Link>
+                <Link to={'/cradles'}>All Cradles</Link>
                 <Link to={'/profile'}>Profile</Link>
-                <Link to={'/new_tweet'}>Code a Cradle</Link>
+                <Link to={'/new_cradle'}>Code a Cradle</Link>
                 <button onClick={this.logoutUser}>Logout</button>
             </div>
         );
