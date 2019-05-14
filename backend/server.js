@@ -5,6 +5,15 @@ const express = require('express');
 const app = express();
 const port = process.env.PORT || 5000;
 
+// Heroku Deployment
+const path = require('path');
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('frontend/build'));
+  app.get('/', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
+  });
+}
+
 /**
  * Initialize mongoose
  */
@@ -32,11 +41,11 @@ app.use(bodyParser.json());
 /**
  * Routes
  */
-const users = require('./routes/api/users');
-app.use('/api/users', users);
+const usersRouter = require('./routes/api/users');
+app.use('/api/users', usersRouter);
 
-const cradles = require('./routes/api/cradles');
-app.use('/api/cradles', cradles);
+const cradlesRouter = require('./routes/api/cradles');
+app.use('/api/cradles', cradlesRouter);
 
 /**
  * Run Express

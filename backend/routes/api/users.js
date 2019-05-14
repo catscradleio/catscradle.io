@@ -1,5 +1,5 @@
-const express = require('express');
-const router = express.Router();
+const users = require('express').Router();
+const cradles = require('./cradles');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const keys = require('../../config/keys');
@@ -9,7 +9,7 @@ const User = require('../../models/User');
 const validateRegisterInput = require('../../validation/register');
 const validateLoginInput = require('../../validation/login');
 
-router.post('/register', (req, res) => {
+users.post('/register', (req, res) => {
   const { errors, isValid } = validateRegisterInput(req.body);
 
   if(!isValid) {
@@ -18,8 +18,8 @@ router.post('/register', (req, res) => {
 
   const { handle, email, password } = req.body;
   User.findOne({ email })
-    .then(user => {
-      if(user) {
+    .then(users => {
+      if(users) {
         errors.email = 'Email already exists';
         return res.status(400).json(errors);
       }
@@ -39,7 +39,7 @@ router.post('/register', (req, res) => {
     });
 });
 
-router.post('/login', (req, res) => {
+users.post('/login', (req, res) => {
   const { errors, isValid } = validateLoginInput(req.body);
 
   if(!isValid) {
@@ -78,9 +78,20 @@ router.post('/login', (req, res) => {
     });
 });
 
-router.get('/current', passport.authenticate('jwt', { session: false }), (req, res) => {
+users.get('/current', passport.authenticate('jwt', { session: false }), (req, res) => {
   const { id, handle, email } = req.user;
   res.json({ id, handle, email });
 });
 
-module.exports = router;
+users.get('/:userId', function(req, res, next) {
+  let userId = req.params.userId;
+  res.send(userId);
+});
+
+users.use('/:userId/cradles', function(req, res, next){
+  req.userId = req.params.userId;
+  next();
+}, cradles);
+
+
+module.exports = users;

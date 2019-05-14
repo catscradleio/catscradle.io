@@ -9,7 +9,7 @@ export const getCradle = (id) => {
 };
 
 export const getUserCradles = (id) => {
-  return axios.get(`/api/cradles/user/${id}`)
+  return axios.get(`/api/cradles/user/${id}`);
 };
 
 export const saveCradle = data => {
