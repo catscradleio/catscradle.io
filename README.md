@@ -13,6 +13,8 @@ Cat's Cradle is a classic game played with a simple string tied in a loop. Many 
 ### Wireframe
 <img alt="Tentative home page design" src="https://user-images.githubusercontent.com/42702747/57587983-719b6e80-74c2-11e9-8d8c-20683cee2b6e.png">
 
+<img alt="Sign in | Sign up pop up modal designs" src="https://user-images.githubusercontent.com/42702747/57667631-244df880-75b9-11e9-8767-5c0e77aa742b.png">
+
 ### Technologies and Technical Challenges
 #### Technologies
 - MERN stack
@@ -28,9 +30,9 @@ Cat's Cradle is a classic game played with a simple string tied in a loop. Many 
 ### Group Members and Work Breakdown
 ##### Members: Yucho Ho, Victoria Joh, Nhat Do, Demetri Sakellaropoulos
 All tasks are submitted and monitored via [project board](https://github.com/catscradleio/catscradle.io/projects/1) with kanban view and automated flow. Tasks, [issues](https://github.com/catscradleio/catscradle.io/issues), and [pull requests](https://github.com/catscradleio/catscradle.io/pulls) have one-to-one association. Group members may take on any task, but our general inclinations are
-- Yucho - game logic
-- Victoria - graphics, UX/UI
-- Nhat - frontend
+- Yucho - game logic, graphics
+- Victoria - graphics, UX/UI, frontend
+- Nhat - frontend, backend
 - Demetri - backend
 
 
@@ -55,7 +57,7 @@ All tasks are submitted and monitored via [project board](https://github.com/cat
 ##### Day 3
 - [x] Prototype styling
 - [x] Render basic shapes on screen
-- [ ] Heroku deployment
+- [x] Heroku deployment
 
 ##### Day 4
 - [ ] CRUD operations on vectors/nodes
