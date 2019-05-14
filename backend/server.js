@@ -32,11 +32,11 @@ app.use(bodyParser.json());
 /**
  * Routes
  */
-const users = require('./routes/api/users');
-app.use('/api/users', users);
+const usersRouter = require('./routes/api/users');
+app.use('/api/users', usersRouter);
 
-const cradles = require('./routes/api/cradles');
-app.use('/api/cradles', cradles);
+const cradlesRouter = require('./routes/api/cradles');
+app.use('/api/cradles', cradlesRouter);
 
 /**
  * Run Express

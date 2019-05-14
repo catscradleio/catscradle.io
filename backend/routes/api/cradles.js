@@ -1,28 +1,28 @@
 const express = require("express");
-const router = express.Router();
+const cradles = express.Router();
 const Cradle = require('../../models/Cradle');
 const passport = require('passport');
 
-router.get('/', (req, res) => {
+cradles.get('/', (req, res) => {
   Cradle.find()
     .then(cradles => res.json(cradles))
     .catch(err => res.status(404).json({ noCradlesFound: 'No cradles found' }));
 });
 
-router.get('/user/:user_id', (req, res) => {
+cradles.get('/user/:user_id', (req, res) => {
   Cradle.find({creator: req.params.user_id})
     .then(cradles => res.json(cradles))
     .catch(err => res.status(404).json({ noCradlesFound: 'No cradles found from that user'}));
 });
 
-router.get('/:id', (req, res) => {
+cradles.get('/:id', (req, res) => {
   Cradle.findById(req.params.id)
     .then(cradle => res.json(cradle))
     .catch(err =>
       res.status(404).json({ noIdFound: 'No cradle found with that ID' }));
 });
 
-router.post('/',
+cradles.post('/',
   passport.authenticate('jwt', { session: false }),
   (req, res) => {
 
@@ -37,4 +37,4 @@ router.post('/',
   });
 
 
-module.exports = router; 
+module.exports = cradles; 
