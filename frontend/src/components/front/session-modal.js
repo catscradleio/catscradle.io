@@ -45,7 +45,7 @@ class SessionModal extends React.Component {
             return (
                 <div className={styles['sessionModal']}>
 
-                    <div className={styles['sessionFormContainer']}>
+                    <div className={styles['sessionFormContainerOverride']}>
                         <div className={styles['sessionModalOptions']}>
                             <span>Sign up or </span> 
                             <span onClick={() => this.switchModal()}
@@ -56,7 +56,7 @@ class SessionModal extends React.Component {
 
 
 
-                    <div className={styles['sessionSpacer']}>
+                    <div className={styles['sessionSpacerOverride']}>
                         <img className={styles['sessionImage']} src="https://2.bp.blogspot.com/-pHg-o9baXXg/XNr6R0UVYzI/AAAAAAAABVI/u8KThDDvp-chKM7clVdBkH8c5JjVB9WDQCLcBGAs/s320/placeholder-02.png" />
                     </div>
                     
@@ -70,8 +70,8 @@ class SessionModal extends React.Component {
         if (this.props.modal){
             return(
             <div id='sessionModalContainer' className={styles['sessionModalContainer']}>
-            {this.pickModal()}
-        </div>
+                {this.pickModal()}
+            </div>
             )
         } else {
             return (<></>)
