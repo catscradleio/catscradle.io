@@ -23,14 +23,10 @@
     "prop-types": "^15.7.2"
   },
   "scripts": {
-    "build": "webpack --mode=production",
-    "dev": "concurrently \"npm run server\" \"npm run frontend\"",
-    "develop": "webpack --mode=development",
+    "server": "concurrently \"npm run server\" \"npm run frontend\"",
     "frontend": "npm start --prefix frontend",
-    "frontend-install": "npm install --prefix frontend",
     "postinstall": "cd frontend && npm install",
-    "server": "nodemon --exec babel-node backend/server.js",
-    "start": "node backend/server.js"
+    "backend": "nodemon --exec babel-node backend/server.js"
   },
   "repository": {
     "type": "git",
