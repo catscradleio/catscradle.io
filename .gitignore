@@ -3,6 +3,7 @@
 
 # Ignore secret keys
 /backend/config/keys.js
+/backend/config/keys_dev.js
 
 # Ignore OS X garbage
 .DS_Store
