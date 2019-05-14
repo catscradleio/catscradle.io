@@ -1,0 +1,12 @@
+
+.canvas {
+    width: 80vw;
+    height: 40vw;
+}
+
+.canvasContainer {
+    width: 980px; 
+    height: 650px; 
+    margin: 0 auto;
+    /* border: 1px solid red; */
+}

@@ -1,0 +1,37 @@
+.buttonNav {
+    background: #75A631;
+    color: white;
+    padding: 10px;
+    border-radius: 25px; 
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.buttonSignup {
+    composes: buttonNav;
+    text-decoration: none;
+}
+
+.buttonLogin {
+    composes: buttonNav;
+    text-decoration: none;
+}
+
+.navbarContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbuttonContaienr {
+
+}
+
+.navbarContainer {
+    margin: 0 auto;
+    width: 1080px;
+}
+
+.appName {
+    color: white;
+}

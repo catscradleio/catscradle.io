@@ -1,0 +1,57 @@
+{
+  "name": "catscradle.io",
+  "version": "1.0.0",
+  "description": "Play cat's cradle online",
+  "main": "index.js",
+  "dependencies": {
+    "@babel/core": "^7.4.4",
+    "@babel/node": "^7.2.2",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "bootstrap": "^4.3.1",
+    "concurrently": "^4.1.0",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.5.7",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
+    "validator": "^10.11.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.0",
+    "prop-types": "^15.7.2"
+  },
+  "scripts": {
+    "build": "webpack --mode=production",
+    "dev": "concurrently \"npm run server\" \"npm run frontend\"",
+    "develop": "webpack --mode=development",
+    "frontend": "npm start --prefix frontend",
+    "frontend-install": "npm install --prefix frontend",
+    "postinstall": "cd frontend && npm install",
+    "server": "nodemon --exec babel-node backend/server.js",
+    "start": "node backend/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/catscradleio/catscradle.io.git"
+  },
+  "keywords": [
+    "cat's",
+    "cradle",
+    "online",
+    "game"
+  ],
+  "contributors": [
+    "Yucho Ho <yucho.ho@gmail.com> (https://yuchoho.com)",
+    "Victoria Joh <vjohkv@gmail.com> (https://vhjoh.com)",
+    "Nhat Do <nhat.do277@gmail.com>",
+    "Demetri Sakellaropoulos <demetri.sakellaropoulos@gmail.com>"
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/catscradleio/catscradle.io/issues"
+  },
+  "homepage": "https://github.com/catscradleio/catscradle.io#readme",
+  "author": ""
+}
