@@ -14,7 +14,7 @@
 }
 
 .buttonLogin {
-    composes: buttonNav;
+    composes: buttonNav; 
     text-decoration: none;
 }
 
@@ -24,11 +24,15 @@
     align-items: center;
 }
 
-.navbuttonContaienr {
+.navbuttonContainer {
+    display: flex;
+    justify-content: space-between;
 
 }
 
 .navbarContainer {
+    display: flex;
+    justify-content: space-between;
     margin: 0 auto;
     width: 860px;
 }

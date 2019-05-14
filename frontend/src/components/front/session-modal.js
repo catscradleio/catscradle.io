@@ -7,35 +7,75 @@ import styles from './session.module.css';
 class SessionModal extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            modal: false,
-            formType: 'login'
-        };
-
+        this.switchModal = this.switchModal.bind(this);
     }
 
-    getModal() {
-        if (this.state.formtype === 'login') {
+    switchModal() {
+        (this.state.modal == true) ?
+            this.setState({ modal: false }) : this.setState({ modal: true })
+    }
+
+
+
+    pickModal() {
+
+        if (this.props.formType == true) {
             return (
                 <div className={styles['sessionModal']}>
-                    <LoginFormContainer />
+                <div className={styles['sessionSpacer']}></div>
+                <div>
+                    <div className={styles['sessionModalOptions']}>
+                        <span>Signin or </span>
+                        <span onClick={() => this.switchModal()}
+                              className={styles['changeSignup']}>Signup</span>
+                    </div>
+                    <div className={styles['sessionModalContents']}><LoginFormContainer /></div>
+                </div>
                 </div>
             );
         } else {
             return (
                 <div className={styles['sessionModal']}>
-                    <SignupFormContainer />
+                    <div className={styles['sessionModalOptions']}>
+                        <span>Signup or </span> 
+                        <span onClick={() => this.switchModal()}
+                              className={styles['changeSignin']}>Signin</span>
+                    </div>
+                    <div className={styles['sessionModalContents']}><SignupFormContainer /></div>
                 </div>
             );
         }
+        
     }
 
+    getModal(){
+        if (this.props.modal){
+            return(
+                <div id='sessionModalContainer' className={styles['sessionModalContainer']}>
+            {this.pickModal()}
+        </div>
+            )
+        } else {
+            return (<></>)
+        }
+    }
+
+    hideModal(){
+        let modal = document.getElementById('sessionModalContainer')
+        modal.style.display = 'none'
+    }
 
     render() {
-        return (
-            <div className={styles['sessionModalContainer']}> {this.getModal()}}</div>
-        );
-    }
+
+            return (
+                <div onClick={() => this.hideModal()}
+                className={styles['modalCover']}>
+                
+                    {this.getModal()}
+                </div>
+            );
+        } 
 }
+
 
 export default withRouter(SessionModal);
