@@ -36,18 +36,39 @@ export const createThreeObjectsGroupFromCradle = opts => {
   const stringMaterial = createThreeMaterial('lambert');
   for(let i = 0; i < vectors.length; i++) {
     const geometry = createStringSegmentGeometry(vectors[i], vectors[(i + 1) % vectors.length]);
-    strings.push(new THREE.Mesh(geometry, stringMaterial));
+    const segment = new THREE.Mesh(geometry, stringMaterial);
+    segment.receiveShadow = true;
+    strings.push(segment);
   }
 
+  const nodeGroup = new THREE.Group();
+  nodeGroup.name = 'nodes';
+  nodeGroup.add(...nodes);
+
+  const stringGroup = new THREE.Group();
+  stringGroup.name = 'strings';
+  stringGroup.add(...strings);
+
   const group = new THREE.Group();
-  group.add(...nodes, ...strings);
+  group.name = 'cradle';
+  group.add(nodeGroup, stringGroup);
   return group;
 };
 
-const createStringSegmentGeometry = (start, end) => {
+export const getStringSegmentCurvePoints = (start, end) => {
   const vectors = [start, end];
   vectors.splice(1, 0, getDanglePoint(vectors));
+  return vectors;
+}
+
+export const createStringSegmentCurve = (start, end) => {
+  const vectors = getStringSegmentCurvePoints(start, end);
   const curve = new THREE.CatmullRomCurve3(vectors);
+  return curve;
+};
+
+export const createStringSegmentGeometry = (start, end) => {
+  const curve = createStringSegmentCurve(start, end);
   const geometry = new THREE.TubeBufferGeometry(curve, 100, 0.01, 10);
   return geometry;
 };
@@ -56,6 +77,10 @@ const getDanglePoint = points => {
   const midpoint = new THREE.Vector3().addVectors(...points).multiplyScalar(0.5);
   const distance = points[0].distanceTo(points[1]);
   return midpoint.setY(midpoint.y - distance * 0.2);
+};
+
+export const updateCradle = (node, strings) => {
+  ;
 };
 
 export const createThreeMaterial = params => {

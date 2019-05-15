@@ -1,4 +1,6 @@
 import * as THREE from 'three';
+import DragCongrols from 'three-dragcontrols';
+import { createStringSegmentGeometry } from './cradle-util';
 const OrbitControls = require('three-orbit-controls')(THREE);
 const TransformControls = require('three-transform-controls')(THREE);
 
@@ -18,11 +20,33 @@ export const initializeCanvas = data => {
   initializeCamera({ camera });
   initializeLight(scene);
   updateData(data, { scene, camera, renderer });
-
   const mesh = data.cradle || createPlaceholderMesh();
-  // transformControls.attach(mesh);
-  // scene.add(transformControls);
   scene.add(mesh);
+
+  const dragControls = new DragCongrols(mesh.getObjectByName('nodes').children, camera, renderer.domElement);
+  dragControls.addEventListener('hoveron', e => {
+    transformControls.attach(e.object);
+  });
+
+  transformControls.addEventListener('objectChange', () => {
+    const nodes = mesh.getObjectByName('nodes').children;
+    const oldStrings = mesh.getObjectByName('strings');
+    const newStrings = [];
+    const stringMaterial = oldStrings.children[0].material.clone();
+    mesh.remove(oldStrings);
+    for (let i = 0; i < nodes.length; i++) {
+      const geometry = createStringSegmentGeometry(nodes[i].position, nodes[(i + 1) % nodes.length].position);
+      const segment = new THREE.Mesh(geometry, stringMaterial);
+      segment.receiveShadow = true;
+      newStrings.push(segment);
+    }
+    const newStringsGroup = new THREE.Group();
+    newStringsGroup.name = 'strings';
+    newStringsGroup.add(...newStrings);
+    mesh.add(newStringsGroup);
+  });
+
+  scene.add(transformControls);
   animate(data)();
 };
 

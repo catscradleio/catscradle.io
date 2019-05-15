@@ -15,6 +15,7 @@
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
     "three": "^0.104.0",
+    "three-dragcontrols": "^0.88.2",
     "three-orbit-controls": "^82.1.0",
     "three-transform-controls": "^1.0.4"
   },
