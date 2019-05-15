@@ -23,10 +23,10 @@
     "prop-types": "^15.7.2"
   },
   "scripts": {
-    "server": "concurrently \"npm run server\" \"npm run frontend\"",
+    "backend": "nodemon --exec babel-node backend/server.js",
     "frontend": "npm start --prefix frontend",
     "postinstall": "cd frontend && npm install",
-    "backend": "nodemon --exec babel-node backend/server.js"
+    "server": "concurrently \"npm run backend\" \"npm run frontend\""
   },
   "repository": {
     "type": "git",
