@@ -69,9 +69,17 @@ class SessionModal extends React.Component {
     getModal(){
         if (this.props.modal){
             return(
-            <div id='sessionModalContainer' className={styles['sessionModalContainer']}>
-                {this.pickModal()}
-            </div>
+                <>
+                <div className={styles['modalContent']}>
+                <div id='modal' className={styles['modal']}>
+                        {this.pickModal()}</div>
+                </div>
+
+                <div id='sessionModalContainer' 
+                    onClick={() => this.hideModal()}
+                    className={styles['sessionModalContainer']}>
+                </div>
+            </>
             )
         } else {
             return (<></>)
@@ -80,19 +88,18 @@ class SessionModal extends React.Component {
 
 
     hideModal(){
-        let modal = document.getElementById('sessionModalContainer')
+        let modalContainer = document.getElementById('sessionModalContainer')
+        let modal = document.getElementById("modal")
+        modalContainer.style.display = 'none'
         modal.style.display = 'none'
     }
 
     render() {
 
             return (
-                <>
-                <div onClick={() => this.hideModal()}
-                className={styles['modalCover']}>
+                <div >
+                    <div className={styles['modalContentSpacer']}> {this.getModal()}</div>
                 </div>
-                {this.getModal()}
-                </>
             );
         } 
 }

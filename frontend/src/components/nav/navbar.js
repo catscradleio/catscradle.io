@@ -51,22 +51,26 @@ class NavBar extends React.Component {
 
   showModalSignup(){
     this.setState({ modal: true, formType: 'signup' })
-    let modal = document.getElementById('sessionModalContainer')
+    let modalBody = document.getElementById('sessionModalContainer')
+    let modal = document.getElementById('modal')
     if (!modal) {
       return null
     }
     this.changeGradientOrange();
+    modalBody.style.display = 'block'
     modal.style.display = 'block'
 
   }
 
   showModalLogin() {
     this.setState({ modal: true, formType: 'login' })
-    let modal = document.getElementById('sessionModalContainer')
+    let modalBody = document.getElementById('sessionModalContainer')
+    let modal = document.getElementById('modal')
     if (!modal) {
       return null
     }
       this.changeGradientBlue();
+      modalBody.style.display = 'block'
       modal.style.display = 'block'
   }
 
@@ -93,7 +97,7 @@ class NavBar extends React.Component {
               { this.getLinks() }
 
           </div>
-            <SessionModal formType={this.state.formType} modal={this.state.modal}/>
+          <div className={styles['modalSpacer']} ><SessionModal formType={this.state.formType} modal={this.state.modal} /></div>
         </>
       );
   }

@@ -71,3 +71,14 @@
 .navLink a:hover {
     color: #F7DDBB;
 }
+
+.modalSpacer {
+    top: 15px;
+    display: flex;
+    align-content: center;
+    vertical-align: middle;
+    height: 100%;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+}

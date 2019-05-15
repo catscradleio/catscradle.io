@@ -1,6 +1,5 @@
 .sessionModalContainer {
     position: fixed;
-    z-index: 1;
     left: 0;
     top: 0;
     width: 100%;
@@ -15,7 +14,7 @@
 
 .sessionModal {
     background-color: #fefefe;
-    margin: 17.5% auto;
+    margin: 0 auto;
     width: 500px;
     height: 350px;
     border-radius: 15px;
@@ -73,11 +72,16 @@
     color: white;
     background: #357784;
     padding: 7px;
-    font-weight: 500;
+    font-weight: bold;
     border-radius: 25px;
     margin-top: 25px;
     font-size: 12px;
     border: none;
+    cursor: pointer;
+}
+
+.sessionSubmitButton:hover {
+    background: #154B56;
 }
 
 .forgotPass {
@@ -105,11 +109,30 @@
 
 .sessionSubmitButtonOverride {
     composes: sessionSubmitButton;
-    background: #CB822A;
+    background: #D8A217;
+}
+
+.sessionSubmitButtonOverride:hover {
+    background: #A4720F;
 }
 
 .sessionSpacerOverride {
     composes: sessionSpacer;
-    background: #CB822A;
+    background: #D8A217;
+}
+
+.modal {
+    position: fixed;
+    z-index: 1;
+    
+}
+
+.modalContent {
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+
+
+
 }
 
