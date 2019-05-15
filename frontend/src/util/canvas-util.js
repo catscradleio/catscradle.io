@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 const OrbitControls = require('three-orbit-controls')(THREE);
+const TransformControls = require('three-transform-controls')(THREE);
 
 export const initializeCanvas = data => {
   const element = data.element;
@@ -10,6 +11,7 @@ export const initializeCanvas = data => {
   const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
   const renderer = new THREE.WebGLRenderer({ antialias: true });
   const controls = new OrbitControls(camera, renderer.domElement);
+  const transformControls = new TransformControls(camera, renderer.domElement);
   renderer.setSize(width, height);
   element.appendChild(renderer.domElement);
   initializeOrbits({ controls });
@@ -18,6 +20,8 @@ export const initializeCanvas = data => {
   updateData(data, { scene, camera, renderer });
 
   const mesh = data.cradle || createPlaceholderMesh();
+  // transformControls.attach(mesh);
+  // scene.add(transformControls);
   scene.add(mesh);
   animate(data)();
 };
