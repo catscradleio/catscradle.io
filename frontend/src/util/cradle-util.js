@@ -13,7 +13,7 @@ export const createThreeObjectFromCradle = opts => {
   const { cradle } = opts;
   const vectors = cradle.coordinates.map(cord => new THREE.Vector3(...cord));
   const curve = new THREE.CatmullRomCurve3(vectors, true);
-  const geometry = new THREE.TubeBufferGeometry(curve, 100, 0.05, 10, true);
+  const geometry = new THREE.TubeBufferGeometry(curve, 100, 0.01, 10, true);
   const material = createThreeMaterial(opts);
   return new THREE.Mesh(geometry, material);
 };
@@ -21,7 +21,7 @@ export const createThreeObjectFromCradle = opts => {
 export const createThreeMaterial = params => {
   const opts = Object.assign({
     material: 'lambert',
-    color: 0x00ff00
+    color: 0xe200e2
   }, params);
   const { material, color } = opts;
 

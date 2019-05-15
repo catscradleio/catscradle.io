@@ -3,7 +3,7 @@ const OrbitControls = require('three-orbit-controls')(THREE);
 
 export const initializeCanvas = data => {
   const element = data.element;
-  const width = element.clientWidth / 1.1;
+  const width = element.clientWidth;
   const height = element.clientHeight;
 
   const scene = new THREE.Scene();
@@ -36,10 +36,11 @@ const initializeOrbits = fields => {
 };
 
 const initializeCamera = fields => {
-  const { camera, x = 0, y = 0, z = 4 } = fields;
+  const { camera, x = 0.5, y = 0.5, z = 1.3 } = fields;
   camera.position.x = x;
   camera.position.y = y;
   camera.position.z = z;
+  camera.lookAt(0, 0, 0);
 };
 
 const initializeLight = scene => {
@@ -57,7 +58,7 @@ const updateData = (data, fields) => {
 
 const animate = data => () => {
   data.frameId = requestAnimationFrame(animate(data));
-  const width = data.element.clientWidth / 1.1;
+  const width = data.element.clientWidth;
   const height = data.element.clientHeight;
   data.renderer.setSize(width, height);
   data.renderer.render(data.scene, data.camera);

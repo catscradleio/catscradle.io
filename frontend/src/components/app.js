@@ -6,7 +6,6 @@ import ProfileContainer from '../components/user/profile_container';
 import './app.css';
 
 import Front from './front/front';
-import TestDrawCradle from './test-draw-cradle/test-draw-cradle';
 
 const App = () => {
   return (
