@@ -1,25 +1,20 @@
 .sessionModalContainer {
     position: fixed;
-    z-index: 1;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    /* overflow: auto; */
-    background-image: linear-gradient(rgba(134,167,180,.7), rgba(10, 13,36,.7));;
-    /* display: none; */
+    background-image: linear-gradient(rgba(85, 115, 136, .7), rgba(10, 13, 36, 0.3));
 }
 
 .sessionSpacer {
-    /* border: 1px solid blue; */
     width: 40%;
     background: #357784;
 }
 
 .sessionModal {
     background-color: #fefefe;
-    margin: 17.5% auto;
-    /* margin: 200px auto; */
+    margin: 0 auto;
     width: 500px;
     height: 350px;
     border-radius: 15px;
@@ -29,25 +24,115 @@
 }
 
 .sessionModalContents {
-
-    border: 1px solid red;
+    margin-top: 30px;
     align-content: center;
 }
 
 .sessionModalOptions {
     margin: 0 auto;
-    border: 1px solid red;
-    font-size: 30px;
+    font-size: 25px;
 }
 
 .changeSignin, .changeSignup {
-    font-weight: bold;
+    font-weight: 500;
 }
 
 .changeSignin {
-    color: blue;
+    color: #357784;
 }
 
 .changeSignup {
-    color: orange;
+    color: #CB822A;
 }
+
+.sessionImage {
+
+    width: 100%;
+    height: 100%;
+}
+
+.sessionFormContainer {
+    margin: 0 auto;
+    margin-top: 15%;
+}
+
+/* Login Form + Signup Forms (shared) */
+.sessionFormInput {
+    border: none;
+    border-bottom: 1px solid lightgray;
+    margin-bottom: 10px;
+    width: 100%;
+    font-size: 12px;
+    outline-width: 0;
+}
+
+.sessionSubmitButton {
+    width: 100%;
+    margin: 0 auto;
+    color: white;
+    background: #357784;
+    padding: 7px;
+    font-weight: bold;
+    border-radius: 25px;
+    margin-top: 25px;
+    font-size: 12px;
+    border: none;
+    cursor: pointer;
+}
+
+.sessionSubmitButton:hover {
+    background: #154B56;
+}
+
+.forgotPass {
+    font-size: 10px;
+    color: gray;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    margin-top: 7.5px;
+}
+
+.sessionButtonContainer {
+    margin: 0 auto;
+    width: 95%;
+
+}
+
+
+/* Sign up forms formatting! */
+
+.sessionFormContainerOverride {
+    margin: 0 auto;
+    margin-top: 7.5%;
+}
+
+.sessionSubmitButtonOverride {
+    composes: sessionSubmitButton;
+    background: #D8A217;
+}
+
+.sessionSubmitButtonOverride:hover {
+    background: #A4720F;
+}
+
+.sessionSpacerOverride {
+    composes: sessionSpacer;
+    background: #D8A217;
+}
+
+.modal {
+    position: fixed;
+    z-index: 1;
+    
+}
+
+.modalContent {
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+
+
+
+}
+

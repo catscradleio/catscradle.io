@@ -1,5 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import styles from '../front/session.module.css';
+
 
 class SignupForm extends React.Component {
   constructor(props) {
@@ -60,31 +62,36 @@ class SignupForm extends React.Component {
         <form onSubmit={this.handleSubmit}>
           <div className="login-form">
             <br />
-            <input type="text"
+            <input className={styles['sessionFormInput']}
+              type="text"
               value={this.state.email}
               onChange={this.update('email')}
               placeholder="Email"
             />
             <br />
-            <input type="text"
+            <input className={styles['sessionFormInput']}
+              type="text"
               value={this.state.handle}
               onChange={this.update('handle')}
               placeholder="Handle"
             />
             <br />
-            <input type="password"
+            <input className={styles['sessionFormInput']}
+              type="password"
               value={this.state.password}
               onChange={this.update('password')}
               placeholder="Password"
             />
             <br />
-            <input type="password"
+            <input className={styles['sessionFormInput']}
+              type="password"
               value={this.state.password2}
               onChange={this.update('password2')}
               placeholder="Confirm Password"
             />
             <br />
-            <input type="submit" value="Submit" />
+            <input className={styles['sessionSubmitButtonOverride']}
+              type="submit" value="Create" />
             {this.renderErrors()}
           </div>
         </form>
