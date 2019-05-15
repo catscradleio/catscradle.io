@@ -1,14 +1,15 @@
 ## catscradle.io
+[Live Demo](http://catscradleio.herokuapp.com/)
 
 ### Background and Overview
-Cat's Cradle is a classic game played with a simple string tied in a loop. Many complex and beautiful designs can come out of manipulation of the string using just human hands. We are building an virtual version of Cat's Cradle that will exceed human limitations and let users construct 3D designs that are only limited by their imaginations. The controls and interface will be intuitive and easy to learn.
+Cat's Cradle is a classic game played with a simple string tied in a loop. Many complex and beautiful designs can come out of manipulation of the string using just human hands. We are building a virtual version of Cat's Cradle that will exceed human limitations and let users construct 3D designs that are only limited by their imaginations. The controls and interface will be intuitive and easy to learn.
 
 
 ### Functionality and MVP
 - [x] User auth
 - [ ] Sharing cat's cradles with other users
 - [ ] Intuitive, stress-free cradle designing UI/UX
-- [ ] Production README
+- [x] Production README
 
 ### Wireframe
 <img alt="Tentative home page design" src="https://user-images.githubusercontent.com/42702747/57587983-719b6e80-74c2-11e9-8d8c-20683cee2b6e.png">
