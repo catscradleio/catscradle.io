@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route , Redirect } from 'react-router-dom';
+import { Switch, Redirect } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route-util';
 import Feed from './feed/feed';
 import ProfileContainer from '../components/user/profile_container';
@@ -12,7 +12,6 @@ const App = () => {
   return (
     <>
       <Switch>
-        <Route exact path='/test-draw-cradle' component={TestDrawCradle} />
         <AuthRoute exact path="/" component={Front} />
         <ProtectedRoute exact path='/profile' component={ProfileContainer} />
         <ProtectedRoute exact path='/cradles' component={Feed} />
