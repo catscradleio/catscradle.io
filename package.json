@@ -26,7 +26,9 @@
     "backend": "nodemon --exec babel-node backend/server.js",
     "frontend": "npm start --prefix frontend",
     "postinstall": "cd frontend && npm install",
-    "server": "concurrently \"npm run backend\" \"npm run frontend\""
+    "server": "concurrently \"npm run backend\" \"npm run frontend\"",
+    "start": "node backend/server.js",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
   },
   "repository": {
     "type": "git",

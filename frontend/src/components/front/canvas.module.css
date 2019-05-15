@@ -1,12 +1,19 @@
-
 .canvas {
     width: 80vw;
     height: 40vw;
 }
 
 .canvasContainer {
-    width: 980px; 
-    height: 650px; 
+    width: 860px; 
+    height: 600px; 
     margin: 0 auto;
-    /* border: 1px solid red; */
+}
+
+.cradleTitle, .cradleAuthor {
+    line-height: 0;
+    color: #BABABA;
+}
+
+.canvasBodyContainer {
+    margin-top: 50px;
 }

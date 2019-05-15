@@ -1,10 +1,17 @@
 .buttonNav {
-    background: #75A631;
+    background: #357784;
     color: white;
-    padding: 10px;
+    padding: 7.5px 15px;
     border-radius: 25px; 
     font-weight: bold;
     margin-left: 10px;
+    font-size: 12px;
+    border: none;
+    cursor: pointer;
+}
+
+.buttonNav:hover {
+    background: #154B56;
 }
 
 .buttonSignup {
@@ -13,7 +20,7 @@
 }
 
 .buttonLogin {
-    composes: buttonNav;
+    composes: buttonNav; 
     text-decoration: none;
 }
 
@@ -23,15 +30,55 @@
     align-items: center;
 }
 
-.navbuttonContaienr {
+.navbuttonContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
 }
 
 .navbarContainer {
+    display: flex;
+    justify-content: space-between;
     margin: 0 auto;
     width: 1080px;
 }
 
+.appNameContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .appName {
     color: white;
+}
+
+.logo {
+    height: 65px;
+    width: 65px;
+    margin-right: 7.5px;
+}
+
+.navLink a{
+    color: white;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+    margin-right: 15px;
+}
+
+.navLink a:hover {
+    color: #F7DDBB;
+}
+
+.modalSpacer {
+    top: 15px;
+    display: flex;
+    align-content: center;
+    vertical-align: middle;
+    height: 100%;
+    position: absolute;
+    top: 25%;
+    left: 50%;
 }

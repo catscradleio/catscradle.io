@@ -19,8 +19,8 @@ class Canvas extends React.Component {
         this.scene.add(cube);
     }
     componentDidMount() {
-        const width = this.mount.clientWidth/1.1;
-        const height = this.mount.clientHeight;
+        const width = 650;
+        const height = 400;
 
         this.scene = new THREE.Scene();
         this.camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
@@ -59,10 +59,10 @@ class Canvas extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className={styles['canvasBodyContainer']}>
                 <div className={styles['canvasContainer']}> 
-                <h1>Untitled demo</h1>
-                <h3>A cradle by anonymous</h3>
+                <h2 className={styles["cradleTitle"]}>Untitled demo</h2>
+                <h6 className={styles["cradleAuthor"]}>A CRADLE BY ANONYMOUS</h6>
                 <div className={styles['canvas']}
                     ref={mount => {
                         this.mount = mount;

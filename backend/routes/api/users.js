@@ -90,7 +90,7 @@ users.get('/:userId', function(req, res, next) {
 
 users.use('/:userId/cradles', function(req, res, next){
   req.userId = req.params.userId;
-  next()
+  next();
 }, cradles);
 
 
