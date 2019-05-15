@@ -1,5 +1,5 @@
 import React from 'react';
-import Canvas from './canvas';
+import FrontCanvas from './front-canvas';
 import styles from './front.module.css';
 import NavbarContainer from '../nav/navbar-container';
 
@@ -11,7 +11,7 @@ class Front extends React.Component {
           <NavbarContainer />
         <div className={styles['frontBodyContentContainer']}>
         
-          <Canvas />
+          <FrontCanvas />
           <div className={styles['frontFooterContainer']}>
             <p>This component only shows up if user is not logged in</p>
             <footer>

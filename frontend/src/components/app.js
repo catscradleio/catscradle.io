@@ -7,7 +7,6 @@ import './app.css';
 
 import Front from './front/front';
 
-
 const App = () => {
   return (
     <>

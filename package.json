@@ -23,13 +23,10 @@
     "prop-types": "^15.7.2"
   },
   "scripts": {
-    "build": "webpack --mode=production",
-    "dev": "concurrently \"npm run server\" \"npm run frontend\"",
-    "develop": "webpack --mode=development",
+    "backend": "nodemon --exec babel-node backend/server.js",
     "frontend": "npm start --prefix frontend",
-    "frontend-install": "npm install --prefix frontend",
     "postinstall": "cd frontend && npm install",
-    "server": "nodemon --exec babel-node backend/server.js",
+    "server": "concurrently \"npm run backend\" \"npm run frontend\"",
     "start": "node backend/server.js",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
   },
