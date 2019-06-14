@@ -1,7 +1,7 @@
 {
   "name": "catscradle.io",
   "version": "1.0.0",
-  "description": "Play cat's cradle online",
+  "description": "Play pictionary!",
   "main": "index.js",
   "dependencies": {
     "@babel/core": "^7.4.4",
@@ -35,8 +35,7 @@
     "url": "git+https://github.com/catscradleio/catscradle.io.git"
   },
   "keywords": [
-    "cat's",
-    "cradle",
+    "pictionary",
     "online",
     "game"
   ],

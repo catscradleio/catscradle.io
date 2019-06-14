@@ -1,0 +1,32 @@
+#canvas {
+    border: 1px solid black;
+    margin: 0;
+    /* background: #B4F7CC; */
+    /* width: 500px;
+    height: 500px; */
+}
+
+#canvasToolbarContainer {
+    /* border: 1px solid black; */
+    width: 40px;
+    margin: 0;
+}
+
+.toolIcon {
+    width: 30px;
+    height: 30px;
+}
+
+
+#colorWheel {
+    border: 1px solid black;
+}
+
+#canvasLayout {
+    display: flex;
+    justify-content: flex-start;
+}
+
+#colorCanvasHolder {
+    /* border: 1px solid black; */
+}

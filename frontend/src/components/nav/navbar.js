@@ -90,7 +90,7 @@ class NavBar extends React.Component {
         <>
           <div className={styles['navbarContainer']}>
             <div className={styles['appNameContainer']}>
-              <img className={styles['logo']} src="https://3.bp.blogspot.com/-XYb9-4Rk54Q/XNs5sYxbZUI/AAAAAAAABVg/B1IfGITMau0H6dg0jmqAboY7SU-PoVpqQCLcBGAs/s1600/cc_logo-05.png" />
+              {/* <img className={styles['logo']} src="https://3.bp.blogspot.com/-XYb9-4Rk54Q/XNs5sYxbZUI/AAAAAAAABVg/B1IfGITMau0H6dg0jmqAboY7SU-PoVpqQCLcBGAs/s1600/cc_logo-05.png" /> */}
               <h1 className={styles['appName']}>CatsCradle.io</h1>
             </div>
             
