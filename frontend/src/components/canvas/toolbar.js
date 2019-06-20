@@ -119,7 +119,8 @@ class Toolbar extends React.Component {
                         onMouseOut={(this.state.mode !== 'eyedropper') ? 
                             () => this.changeImage('tool_eyedropper', '/icons/tools_eyedropper.png')
                             : this.changeImage('tool_eyedropper', '/icons/tools_eyedropper_select.png')}
-                        onClick={() => {
+                        onClick={(e) => {
+                            this.props.changeCursor(e)
                             this.setMode('eyedropper');
                         }}
                         />

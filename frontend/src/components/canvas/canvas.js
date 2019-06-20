@@ -40,6 +40,7 @@ class Canvas extends React.Component {
         this.undo = this.undo.bind(this);
         this.changeState = this.changeState.bind(this);
         this.eyedropper = this.eyedropper.bind(this);
+        this.changeCursor = this.changeCursor.bind(this);
     }
 
  
@@ -48,7 +49,6 @@ class Canvas extends React.Component {
         document.addEventListener('mousemove', this.draw);
         document.addEventListener('click', this.eyedropper);
     }
-
     
     componentDidUpdate(){
         document.addEventListener('mouseup', this.handleMouseUp);
@@ -93,6 +93,20 @@ class Canvas extends React.Component {
             this.setState({lastDrawColor: color});
         }
         this.setState({strokeStyle: color});
+    }
+
+    changeCursor(e){
+        var css = '#canvas:hover{ cursor: url(/cursor/cursor_eyedropper.png) 2 15, pointer }';
+        var style = document.createElement('style');
+        if (this.state.mode === 'eyedropper' && this.drawArea.current.contains(e.target)) {
+            if (style.styleSheet) {
+                style.styleSheet.cssText = css;
+            } else {
+                style.appendChild(document.createTextNode(css));
+            }
+
+            document.getElementsByTagName('head')[0].appendChild(style);
+        }
     }
 
     returnToBrush(){
@@ -156,7 +170,8 @@ class Canvas extends React.Component {
                     changeStrokeSize={this.changeStrokeSize}
                     returnToBrush={this.returnToBrush}
                     lineWidth = {this.state.lineWidth}
-                    clear = {this.clear}/>
+                    clear = {this.clear}
+                    changeCursor = {this.changeCursor}/>
                 <canvas id='canvas'
                         ref={this.drawArea} 
                         height={`${this.state.height}`} 

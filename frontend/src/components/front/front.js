@@ -5,6 +5,7 @@ import NavbarContainer from '../nav/navbar-container';
 import Canvas from '../canvas/canvas';
 import Chat from '../chat/chatBoard';
 import Game from '../game/game';
+import PlayerBoard from '../players/playerBoard';
 
 
 class Front extends React.Component {
@@ -17,7 +18,8 @@ class Front extends React.Component {
 
           <div className={styles.contentContainer}>
             <Game />
-            <div className={styles.canvasChatContainer}>
+            <div className={styles.playableContainer}>
+              <PlayerBoard />
               <Canvas />
               <Chat />
             </div>

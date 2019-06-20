@@ -52,16 +52,18 @@
 }
 
 .sendButton {
-    background: cornflowerblue;
+    background: #5688C1;
     width: 75px;
     border-radius: 25px;
     padding: 5px;
     border: none;
     color: white;
-    font-weight: 500;
+    font-weight: 600;
     margin-left: 5px;
+    font-size: 12px;
 }
 
 .sendButton:hover {
     cursor: pointer;
+    background: #2A71AF;
 }
