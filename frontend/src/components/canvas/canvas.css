@@ -32,7 +32,7 @@
 }
 
 #colorWheel:hover {
-    cursor: url('/cursors/cursor_eyedropper.png');
+    cursor: url(/cursor/cursor_eyedropper.png) 2 15, pointer;
 }
 
 #canvasLayout {
