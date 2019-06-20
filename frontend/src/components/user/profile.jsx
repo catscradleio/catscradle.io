@@ -1,5 +1,7 @@
 import React from 'react';
 import UserCradleItem from './user_cradle_item';
+import NavbarContainer from '../nav/navbar-container';
+import styles from './profile.module.css';
 
 class Profile extends React.Component {
 
@@ -8,20 +10,17 @@ class Profile extends React.Component {
   }
 
   render() {
-    if (this.props.cradles.length === 0) {
-      return ( <div>No cradles yet!</div> )
-    } else {
-      return (
-      <div>
+    return (
+      <div className={styles['profileBodyContainer']}>
+        <NavbarContainer />
         <h3>User's Cradles</h3>
         {this.props.cradles.map(cradle => (
           <UserCradleItem cradle={cradle} />
         ))}
       </div>
-      );
-    }
-
+    )
   }
 }
+
 
 export default Profile;
