@@ -42,9 +42,9 @@ class ColorWheel extends React.Component {
             // in radians
             // arc path : (x, y, r, sAngle, eAngle, counterclockwise)
             ctx.fillStyle = COLORS_HASH[i];
-            ctx.moveTo(100, 75);
-            ctx.arc(100, 75, 50, segment * i, segment * i + segment);
-            ctx.lineTo(100, 75);
+            ctx.moveTo(50, 50);
+            ctx.arc(50, 50, 50, segment * i, segment * i + segment);
+            ctx.lineTo(50, 50);
             ctx.fill();
         }
     }
@@ -72,7 +72,7 @@ class ColorWheel extends React.Component {
     render() {
         return (
             <div id='colorCanvasHolder'>
-                <canvas ref={this.node} id='colorWheel' width='200' height='200'/>
+                <canvas ref={this.node} id='colorWheel' width='100' height='100'/>
             </div>
         )
     }

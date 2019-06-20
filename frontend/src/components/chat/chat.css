@@ -1,18 +1,22 @@
 .chatBoardContainer {
     border: 1px solid black; 
-    width: 400px;
+    width: 300px;
     margin: 0 auto;
     padding: 0;
     box-sizing: border-box;
-    height: 500px;
+    height: 400px;
     overflow: scroll;
+    position: relative;
 }
 
 .messagesForm {
-    padding: 3px;
-    position: fixed;
-    bottom: 25px;
+    padding: 5px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
     display: flex;
+    box-sizing: border-box;
+    /* margin: 5px; */
 }
 
 .messages {
@@ -23,6 +27,7 @@
 
 .messages li {
     padding: 5px 10px;
+    margin: 0px 5px;
 }
 
 .messages li:nth-child(odd) {
@@ -32,6 +37,18 @@
 
 .m {
     width: 100%;
+    padding: 5px;
+    font-size: 14px;
+    border-radius: 5px;
+    border-style: none;
+    border: 1px solid lightgray;
+    /* outline: 1px solid lightblue; */
+    overflow: hidden;
+}
+
+.m:focus {
+    border: 1px solid #0696BB;
+    outline-width: 0px;
 }
 
 .sendButton {
@@ -43,4 +60,8 @@
     color: white;
     font-weight: 500;
     margin-left: 5px;
+}
+
+.sendButton:hover {
+    cursor: pointer;
 }

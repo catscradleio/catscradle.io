@@ -161,8 +161,8 @@ class Canvas extends React.Component {
                         ref={this.drawArea} 
                         height={`${this.state.height}`} 
                         width={`${this.state.width}`}/>
-                <ColorWheel
-                    changeColor={this.changeColor} />
+                    <ColorWheel changeColor={this.changeColor} />
+
                 </div>
             </div>
         );

@@ -15,7 +15,7 @@ class SessionModal extends React.Component {
     }
 
     switchModal() {
-        (this.state.formType == 'login') ?
+        (this.state.formType === 'login') ?
             this.setState({ modal: 'signup' }) : this.setState({ modal: 'login' })
     }
 
@@ -26,7 +26,9 @@ class SessionModal extends React.Component {
         return (
             <div className={styles['sessionModal']}>
                 <div className={styles['sessionSpacer']}>
-                    <img className={styles['sessionImage']} src="https://2.bp.blogspot.com/-pHg-o9baXXg/XNr6R0UVYzI/AAAAAAAABVI/u8KThDDvp-chKM7clVdBkH8c5JjVB9WDQCLcBGAs/s320/placeholder-02.png" />
+                    <img className={styles['sessionImage']} 
+                         alt='signup modal'
+                         src="https://2.bp.blogspot.com/-pHg-o9baXXg/XNr6R0UVYzI/AAAAAAAABVI/u8KThDDvp-chKM7clVdBkH8c5JjVB9WDQCLcBGAs/s320/placeholder-02.png" />
                 </div>
 
                 <div className={styles['sessionFormContainer']}>
@@ -59,7 +61,9 @@ class SessionModal extends React.Component {
 
 
                 <div className={styles['sessionSpacerOverride']}>
-                    <img className={styles['sessionImage']} src="https://2.bp.blogspot.com/-pHg-o9baXXg/XNr6R0UVYzI/AAAAAAAABVI/u8KThDDvp-chKM7clVdBkH8c5JjVB9WDQCLcBGAs/s320/placeholder-02.png" />
+                    <img className={styles['sessionImage']} 
+                         alt='signin modal'    
+                         src="https://2.bp.blogspot.com/-pHg-o9baXXg/XNr6R0UVYzI/AAAAAAAABVI/u8KThDDvp-chKM7clVdBkH8c5JjVB9WDQCLcBGAs/s320/placeholder-02.png" />
                 </div>
 
             </div>
@@ -71,7 +75,7 @@ class SessionModal extends React.Component {
     getModal(){
         if (this.props.modal) {
             return (
-                (this.props.formType != 'login') ? 
+                (this.props.formType !== 'login') ? 
                     <>
                     <div className={styles['modalContent']}>
                         <div id='modal' className={styles['modal']}>

@@ -4,13 +4,14 @@
     height: 100%;
     min-height: 680px;
     margin: 0 auto;
-    
+
 }
 
 .frontBodyContentContainer {
     margin: 0 auto;
-    align-content: center;
-    /* width: 680px; */
+    width: 1080px;
+    margin-bottom: 25px;
+
 }
 
 .frontFooterContainer {
@@ -25,4 +26,9 @@
 .canvasChatContainer {
     display: flex;
     justify-content: space-around;
+}
+
+
+.contentContainer {
+    margin-bottom: 50px;
 }

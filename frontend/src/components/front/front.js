@@ -12,17 +12,17 @@ class Front extends React.Component {
   render() {
     return (
       <div className={styles['frontBodyContainer']}>
-          <NavbarContainer />
+        <NavbarContainer />
         <div className={styles['frontBodyContentContainer']}>
-        
-          {/* <FrontCanvas /> */}
+
           <div className={styles.contentContainer}>
-          <Game />
+            <Game />
             <div className={styles.canvasChatContainer}>
               <Canvas />
               <Chat />
             </div>
           </div>
+
           <div className={styles['frontFooterContainer']}>
             <p>This component only shows up if user is not logged in</p>
             <footer>

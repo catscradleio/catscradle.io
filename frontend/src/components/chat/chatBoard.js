@@ -2,7 +2,6 @@ import React from 'react';
 import './chat.css';
 import socketIOClient  from 'socket.io-client';
 import $ from 'jquery';
-import io from 'socket.io-client';
 
 
 
@@ -60,20 +59,24 @@ class ChatBoard extends React.Component {
         const socket = socketIOClient(this.state.endpoint);
         socket.on('change color', (col) => {
             document.body.style.backgroundColor = col
-        })
+        });
 
         return (
             <div className='chatBoardContainer'>
                 <ul id='messages' className='messages'></ul>
-                <form className='messagesForm' action=''>
-                    <input className='m' id='m' autoComplete='off' onChange={(e) => this.handleUpdate(e)}/>
+                <form className='messagesForm' action=''
+                      onSubmit={e => this.sendMessages(e)}>
+                    <input className='m' id='m' 
+                           autoComplete='off' 
+                           placeholder='Type your guess here..'
+                           onChange={(e) => this.handleUpdate(e)}/>
                     <button onClick={() => this.sendMessages()} className='sendButton'>Send</button>
                 </form>
-                <button onClick={() => this.send()}>Change Color</button>
+                {/* <button onClick={() => this.send()}>Change Color</button>
 
 
                 <button id="blue" onClick={() => this.setColor('blue')}>Blue</button>
-                <button id="red" onClick={() => this.setColor('red')}>Red</button>
+                <button id="red" onClick={() => this.setColor('red')}>Red</button> */}
 
             </div>
         )

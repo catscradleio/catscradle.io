@@ -1,16 +1,17 @@
 #canvas {
-    border: 1px solid black;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
     margin: 0;
-    /* background: #B4F7CC; */
-    /* width: 500px;
-    height: 500px; */
 }
 
 #canvasToolbarContainer {
-    /* border: 1px solid black; */
     width: 40px;
     margin: 0;
-    background: gray;
+    padding-left: 10px;
+    background: lightgray;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
 }
 
 .toolIcon {
@@ -25,14 +26,26 @@
 
 
 #colorWheel {
-    border: 1px solid black;
+    margin-top: 10px;
+    /* border: 1px solid black; */
+    background: lightgray;
+}
+
+#colorWheel:hover {
+    cursor: url('/cursors/cursor_eyedropper.png');
 }
 
 #canvasLayout {
     display: flex;
     justify-content: flex-start;
+    height: 400px;
+    margin-right: 10px;
 }
 
 #colorCanvasHolder {
-    /* border: 1px solid black; */
+    border-right: 1px solid black;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    padding: 0px 10px;
+    background: lightgray;
 }
