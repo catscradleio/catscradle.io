@@ -10,12 +10,18 @@
     /* border: 1px solid black; */
     width: 40px;
     margin: 0;
+    background: gray;
 }
 
 .toolIcon {
     width: 30px;
     height: 30px;
 }
+
+.toolIcon:hover {
+    cursor: pointer;
+}
+
 
 
 #colorWheel {

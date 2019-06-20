@@ -1,0 +1,46 @@
+.chatBoardContainer {
+    border: 1px solid black; 
+    width: 400px;
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    height: 500px;
+    overflow: scroll;
+}
+
+.messagesForm {
+    padding: 3px;
+    position: fixed;
+    bottom: 25px;
+    display: flex;
+}
+
+.messages {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.messages li {
+    padding: 5px 10px;
+}
+
+.messages li:nth-child(odd) {
+    background: #eee;
+}
+
+
+.m {
+    width: 100%;
+}
+
+.sendButton {
+    background: cornflowerblue;
+    width: 75px;
+    border-radius: 25px;
+    padding: 5px;
+    border: none;
+    color: white;
+    font-weight: 500;
+    margin-left: 5px;
+}

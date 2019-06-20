@@ -24,7 +24,8 @@ class Canvas extends React.Component {
             history: [],
             history2: [],
             height: CANVAS_HEIGHT,
-            width: CANVAS_WIDTH
+            width: CANVAS_WIDTH,
+            mode: 'draw'
             // history2: []
         };
 
@@ -37,17 +38,21 @@ class Canvas extends React.Component {
         this.returnToBrush = this.returnToBrush.bind(this);
         this.save = this.save.bind(this);
         this.undo = this.undo.bind(this);
+        this.changeState = this.changeState.bind(this);
+        this.eyedropper = this.eyedropper.bind(this);
     }
 
  
     componentDidMount(){
         document.addEventListener('mousedown', this.handleMouseDown);
         document.addEventListener('mousemove', this.draw);
+        document.addEventListener('click', this.eyedropper);
     }
 
     
     componentDidUpdate(){
         document.addEventListener('mouseup', this.handleMouseUp);
+
     }
     
     handleMouseUp() {
@@ -60,24 +65,25 @@ class Canvas extends React.Component {
     }
 
     draw(e){
-        if (this.state.isDrawing && this.drawArea.current.contains(e.target)) {
-        let canvas = document.getElementById('canvas');
-        let ctx = canvas.getContext('2d');
-        ctx.strokeStyle = this.state.strokeStyle;
-        ctx.lineJoin = 'round';
-        ctx.lineCap = 'round';
-        ctx.lineWidth = this.state.lineWidth;
-        ctx.beginPath();
-        ctx.moveTo(this.lastX, this.lastY);
-        ctx.lineTo(e.offsetX, e.offsetY);
-        ctx.stroke();
-        // this.setState({history : (ctx.save())});
-        [this.lastX, this.lastY] = [e.offsetX, e.offsetY];
-        // console.log(ctx);
-        this.historyStack.push(this.save());
-        this.setState({history2: this.historyStack});
-        this.setState({history: this.save()});
-        // console.log(this.historyStack);
+        if (this.state.mode === 'erase') this.setState({strokeStyle: '#fff'});
+
+        if ((this.state.mode ==='erase' || this.state.mode === 'draw') 
+        && this.state.isDrawing && this.drawArea.current.contains(e.target)) {
+            let canvas = document.getElementById('canvas');
+            let ctx = canvas.getContext('2d');
+            ctx.strokeStyle = this.state.strokeStyle;
+            ctx.lineJoin = 'round';
+            ctx.lineCap = 'round';
+            ctx.lineWidth = this.state.lineWidth;
+            ctx.beginPath();
+            ctx.moveTo(this.lastX, this.lastY);
+            ctx.lineTo(e.offsetX, e.offsetY);
+            ctx.stroke();
+            // this.setState({history : (ctx.save())});
+            [this.lastX, this.lastY] = [e.offsetX, e.offsetY];
+            // this.historyStack.push(this.save());
+            // this.setState({history2: this.historyStack});
+            this.setState({history: this.save()});
         }
 
     }
@@ -102,8 +108,17 @@ class Canvas extends React.Component {
         var dataURL = canvas.toDataURL();
         return dataURL;
         // console.log(dataURL);
-
     }
+
+    eyedropper(e) {
+        if (this.state.mode === 'eyedropper' && this.drawArea.current.contains(e.target)) {
+            let canvas = document.getElementById('canvas');
+            let ctx = canvas.getContext('2d');
+            let color = ctx.getImageData(e.offsetX, e.offsetY, 1, 1);
+            let rgba = `rgba(${color.data[0]},${color.data[1]},${color.data[2]},${color.data[3]})`;
+            if (rgba !== 'rgba(0,0,0,0)') this.changeColor(rgba);
+        }
+    } 
 
     undo(){
         let canvas = document.getElementById('canvas');
@@ -117,8 +132,10 @@ class Canvas extends React.Component {
         myImg.src = imgsrc;
     }
 
-    // undo(){
-    // }
+    changeState(mode){
+        this.setState({mode: mode});
+    }
+
 
     clear(){
         const canvas = document.getElementById('canvas');
@@ -132,6 +149,7 @@ class Canvas extends React.Component {
                 <div id='canvasLayout'>
                 
                 <Toolbar 
+                    changeState={this.changeState}
                     undo={this.undo}
                     save={this.save}
                     changeColor={this.changeColor}

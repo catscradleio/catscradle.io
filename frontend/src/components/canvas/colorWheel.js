@@ -15,6 +15,8 @@ class ColorWheel extends React.Component {
     }
 
 
+
+
     drawColorWheel() {
         let canvas = document.getElementById('colorWheel');
         let ctx = canvas.getContext('2d');
@@ -58,7 +60,7 @@ class ColorWheel extends React.Component {
     }
 
     componentDidUpdate() {
-        
+       
     }
     
     componentDidMount(){

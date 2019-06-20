@@ -3,6 +3,9 @@ import FrontCanvas from './front-canvas';
 import styles from './front.module.css';
 import NavbarContainer from '../nav/navbar-container';
 import Canvas from '../canvas/canvas';
+import Chat from '../chat/chatBoard';
+import Game from '../game/game';
+
 
 class Front extends React.Component {
 
@@ -14,6 +17,8 @@ class Front extends React.Component {
         
           {/* <FrontCanvas /> */}
           <Canvas />
+          <Game />
+          <Chat />
           <div className={styles['frontFooterContainer']}>
             <p>This component only shows up if user is not logged in</p>
             <footer>
