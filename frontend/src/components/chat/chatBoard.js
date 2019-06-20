@@ -69,11 +69,11 @@ class ChatBoard extends React.Component {
                     <input className='m' id='m' autoComplete='off' onChange={(e) => this.handleUpdate(e)}/>
                     <button onClick={() => this.sendMessages()} className='sendButton'>Send</button>
                 </form>
-                {/* <button onClick={() => this.send()}>Change Color</button>
+                <button onClick={() => this.send()}>Change Color</button>
 
 
                 <button id="blue" onClick={() => this.setColor('blue')}>Blue</button>
-                <button id="red" onClick={() => this.setColor('red')}>Red</button> */}
+                <button id="red" onClick={() => this.setColor('red')}>Red</button>
 
             </div>
         )
