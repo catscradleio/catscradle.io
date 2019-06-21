@@ -50,7 +50,7 @@ class ColorWheel extends React.Component {
     }
 
     getColor(e) {
-        if (this.node.current.contains(e.target)){
+        if (this.node.current !== null && this.node.current.contains(e.target)){
         let canvas = document.getElementById('colorWheel');
         let ctx = canvas.getContext('2d');
         let color = ctx.getImageData(e.offsetX, e.offsetY, 1, 1);

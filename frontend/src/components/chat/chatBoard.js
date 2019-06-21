@@ -10,47 +10,63 @@ class ChatBoard extends React.Component {
         super();
         this.state = {
             endpoint: "localhost:4001",
-            message: 'test',
+            message: ''
         };
-        this.sendMessages = this.sendMessages.bind(this);
-        this.handleUpdate = this.handleUpdate.bind(this);
     }
 
 
-    sendMessages(){
+    sendMessages(e){
         const socket = socketIOClient(this.state.endpoint);
+        socket.emit('chat message', this.state.message);
+        $('#m').val('');
 
-        $('form').submit(function(e){
-            e.preventDefault();
-            socket.emit('chat message', $('#m').val());
-
-            return false;
-        });
         socket.on('chat message', function(msg){
             $('#messages').append($('<li>').text(msg));
         });
-        this.setState({message: ''});
     }
 
     handleUpdate(e){
         this.setState({message: e.target.value});
     }
 
+    componentDidMount(){
+    }
+
+    componentDidUpdate(){
+    }
+
+    scrollToBottom(){
+        this.messagesEnd.scrollIntoView({behavior: 'smooth'});
+        console.log(this.messagesEnd);
+    }
+
 
     render() {
- 
+
+        
         return (
             <div className='chatBoardContainer'>
-                <ul id='messages' className='messages'></ul>
-                <form className='messagesForm' action=''
-                      onSubmit={e => this.sendMessages(e)}>
+                <div className='messagesContainer'>
+                    <ul id='messages' className='messages'></ul>
+                    <div ref={(el) => {this.messagesEnd = el;}}>
+                        hi
+                    </div>
+                </div>
+
+                <form className='messagesForm' action=''>
                     <input className='m' id='m' 
                            autoComplete='off' 
+                           onChange = {e => this.handleUpdate(e)}
                            placeholder='Type your guess here..'
-                           onChange={(e) => this.handleUpdate(e)}/>
-                    <button onClick={() => this.sendMessages()} className='sendButton'>Send</button>
+                           />
+                    <button className='sendButton' 
+                            onClick={
+                            e => {this.sendMessages()
+                            this.scrollToBottom()}}
+                            >Send</button>
                 </form>
             </div>
+
         )
     }
 }
