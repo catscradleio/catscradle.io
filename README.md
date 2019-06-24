@@ -1,4 +1,4 @@
-## catscradle.io
+## Pixicon
 [Live Demo]()
 
 ### Background and Overview
