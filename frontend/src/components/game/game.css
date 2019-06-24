@@ -1,0 +1,16 @@
+#gameContainer {
+    display: block;
+}
+
+#guessContainer {
+    display: flex;
+    list-style-type: none;
+    justify-content: space-between;
+    width: 500px;
+    margin: 0 auto;
+    margin-bottom: 25px;
+}
+
+#guessContainer li {
+    font-size: 30px;
+}

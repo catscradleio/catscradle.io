@@ -1,7 +1,7 @@
 {
   "name": "catscradle.io",
   "version": "1.0.0",
-  "description": "Play cat's cradle online",
+  "description": "Play pictionary!",
   "main": "index.js",
   "dependencies": {
     "@babel/core": "^7.4.4",
@@ -23,10 +23,11 @@
     "prop-types": "^15.7.2"
   },
   "scripts": {
+    "socket": "node frontend/src/components/chat/chatUtil.js",
     "backend": "nodemon --exec babel-node backend/server.js",
     "frontend": "npm start --prefix frontend",
     "postinstall": "cd frontend && npm install",
-    "server": "concurrently \"npm run backend\" \"npm run frontend\"",
+    "server": "concurrently \"npm run backend\" \"npm run frontend\" --ignore client",
     "start": "node backend/server.js",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
   },
@@ -35,8 +36,7 @@
     "url": "git+https://github.com/catscradleio/catscradle.io.git"
   },
   "keywords": [
-    "cat's",
-    "cradle",
+    "pictionary",
     "online",
     "game"
   ],
