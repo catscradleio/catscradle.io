@@ -1,6 +1,6 @@
 import React from 'react';
 import './chat.css';
-import socketIOClient  from 'socket.io-client';
+import socketIOClient from 'socket.io-client';
 import $ from 'jquery';
 
 
@@ -8,63 +8,86 @@ import $ from 'jquery';
 class ChatBoard extends React.Component {
     constructor() {
         super();
+        this.messages = [];
         this.state = {
-            endpoint: "localhost:4001",
-            message: ''
+            endpoint: 'localhost:4001',
+            // endpoint: "http://10.0.0.81:4001",
+            message: '',
+            messageArray: []
         };
+        this.sendMessages = this.sendMessages.bind(this);
     }
 
 
-    sendMessages(e){
+    sendMessages(e) {
+        e.preventDefault();
         const socket = socketIOClient(this.state.endpoint);
-        socket.emit('chat message', this.state.message);
+        socket.emit('chat message', $('#m').val());
         $('#m').val('');
+        // this.setState({message: ''});
 
-        socket.on('chat message', function(msg){
+        socket.on('chat message', (msg) => {
+            // this.messages.push(msg);
+            // return this.setState({messageArray: this.messages});
             $('#messages').append($('<li>').text(msg));
         });
+
     }
 
-    handleUpdate(e){
-        this.setState({message: e.target.value});
+    handleUpdate(e) {
+        this.setState({ message: e.target.value });
     }
 
-    componentDidMount(){
+
+    scrollToBottom() {
+        this.messagesEnd.scrollIntoView({ behavior: 'smooth' });
     }
 
-    componentDidUpdate(){
+
+    message(msg, cb) {
+        const socket = socketIOClient(this.state.endpoint);
+
+        socket.emit('message', cb);
     }
 
-    scrollToBottom(){
-        this.messagesEnd.scrollIntoView({behavior: 'smooth'});
-        console.log(this.messagesEnd);
-    }
 
 
     render() {
+        // const socket = socketIOClient(this.state.endpoint);
 
-        
+        // console.log('hi');
+        // socket.on('chat message', (msg) => {
+        //     // this.messages.push(msg);
+        //     // return this.setState({ messageArray: this.messages });
+        //     $('#messages').append($('<li>').text(msg));
+        // });
+
+        // let messages = this.state.messageArray.forEach(msg => {
+        //     return <li>{msg}</li>
+        // });
+        // console.log(messages)
         return (
             <div className='chatBoardContainer'>
                 <div className='messagesContainer'>
-                    <ul id='messages' className='messages'></ul>
-                    <div ref={(el) => {this.messagesEnd = el;}}>
-                        hi
-                    </div>
+                    <ul id='messages' className='messages'>
+                        {/* {messages} */}
+                    </ul>
+                    <div ref={(el) => { this.messagesEnd = el; }}></div>
                 </div>
 
-                <form className='messagesForm' action=''>
-                    <input className='m' id='m' 
-                           autoComplete='off' 
-                           onChange = {e => this.handleUpdate(e)}
-                           placeholder='Type your guess here..'
-                           />
-                    <button className='sendButton' 
-                            onClick={
-                            e => {this.sendMessages()
-                            this.scrollToBottom()}}
-                            >Send</button>
+                <form className='messagesForm' action=''
+                    onSubmit={e => {
+                        this.sendMessages(e)
+                        this.scrollToBottom()
+                    }}>
+                    <input className='m' id='m'
+                        autoComplete='off'
+                        onChange={e => this.handleUpdate(e)}
+                        placeholder='Type your guess here..'
+                    />
+                    <button className='sendButton'>Send</button>
                 </form>
+
             </div>
 
         )

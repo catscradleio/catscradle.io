@@ -14,12 +14,36 @@ const server = http.createServer(app);
 const io = socketIO(server);
 
 // This is what the socket.io syntax is like, we will work this later
+
+
+// io.on('connection', function (client) {
+//     console.log('New client connected');
+    // client.on('join', handleJoin);
+
+    // client.on('message', handleMessage);
+
+    // client.on('leave', handleLeave);
+
+    // client.on('players', handleGetPlayers);
+
+    // client.on('disconnect', function () {
+    //     console.log('client disconnected...', client.id);
+    //     // handleDisconnect();
+    // });
+
+    // client.on('error', function(err) {
+    //     console.log('received error from client:', client.id);
+    //     console.log(err);
+    // });
+// });
+
 io.on('connection', socket => {
     console.log('New client connected');
 
-    socket.on('chat message', function(msg){
-        io.emit('chat message', msg);
+    socket.on('chat message', msg => {
+        socket.emit('chat message', msg);
     });
+
 
     // disconnect is fired when a client leaves the server
     socket.on('disconnect', () => {
@@ -27,4 +51,7 @@ io.on('connection', socket => {
     });
 });
 
-server.listen(port, () => console.log(`Listening on port ${port}`));
+server.listen(port, function (err) {
+    if (err) throw err;
+    console.log(`Listening on port ${port}`)
+});
