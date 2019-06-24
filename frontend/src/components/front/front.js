@@ -26,7 +26,6 @@ class Front extends React.Component {
           </div>
 
           <div className={styles['frontFooterContainer']}>
-            <p>This component only shows up if user is not logged in</p>
             <footer>
               <p>Copyright &copy; 2019</p> 
             </footer>
