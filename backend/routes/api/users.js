@@ -1,5 +1,5 @@
 const users = require('express').Router();
-const cradles = require('./cradles');
+const doodles = require('./doodles');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const keys = require('../../config/keys');
@@ -88,10 +88,10 @@ users.get('/:userId', function(req, res, next) {
   res.send(userId);
 });
 
-users.use('/:userId/cradles', function(req, res, next){
+users.use('/:userId/doodles', function(req, res, next){
   req.userId = req.params.userId;
   next();
-}, cradles);
+}, doodles);
 
 
 module.exports = users;
