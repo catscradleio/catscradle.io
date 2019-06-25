@@ -3,7 +3,6 @@ import NavbarContainer from '../nav/navbar-container';
 import styles from '../feed/feed.module.css';
 import { withRouter } from 'react-router';
 import frontStyles from '../front/front.module.css';
-import CradlesIndexContainer from '../cradles/cradles_index_container';
 
 class Feed extends React.Component {
 
@@ -12,7 +11,6 @@ class Feed extends React.Component {
             <div className={styles['feedBodyContainer']}>
                  <NavbarContainer /> 
 
-                <CradlesIndexContainer />
 
                 <div className={frontStyles['frontFooterContainer']}>
                     <footer>

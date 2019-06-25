@@ -13,7 +13,7 @@ const App = () => {
       <Switch>
         <AuthRoute exact path="/" component={Front} />
         <ProtectedRoute exact path='/profile' component={ProfileContainer} />
-        <ProtectedRoute exact path='/cradles' component={Feed} />
+        <ProtectedRoute exact path='/doodles' component={Feed} />
         <Redirect to="/" />
       </Switch>
     </>

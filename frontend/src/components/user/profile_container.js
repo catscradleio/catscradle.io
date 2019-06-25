@@ -1,21 +1,21 @@
 import {connect} from 'react-redux';
-import {fetchUserCradles} from '../../actions/cradle_actions';
+import {fetchUserDoodles} from '../../actions/doodle_actions';
 import Profile from './profile';
 
-const selectCradles = (cradles) => {
-  return Object.keys(cradles).map(title => cradles[title]);
+const selectDoodles = (doodles) => {
+  return Object.keys(doodles).map(title => doodles[title]);
 };
 
 const mapStateToProps = (state) => {
   return {
-    cradles: selectCradles(state.cradles),
+    doodles: selectDoodles(state.doodles),
     currentUser: state.session.user
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchUserCradles: (creatorId) => dispatch(fetchUserCradles(creatorId))
+    fetchUserDoodles: (creatorId) => dispatch(fetchUserDoodles(creatorId))
   };
 };
 
