@@ -7,7 +7,7 @@ import jwt_decode from 'jwt-decode';
 import { setAuthToken } from './util/session-api-util';
 import { logout } from './actions/session-actions';
 //TESTING
-import {fetchCradles, fetchCradle, storeCradle, fetchUserCradles} from './actions/cradle_actions';
+import {fetchDoodles, fetchDoodle, storeDoodle, fetchUserDoodles} from './actions/doodle_actions';
 //TESTING
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -30,10 +30,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   //TESTING
   window.state = store.getState;
-  window.fetchCradles = fetchCradles;
-  window.fetchCradle = fetchCradle;
-  window.fetchUserCradles = fetchUserCradles;
-  window.storeCradle = storeCradle;
+  window.fetchDoodles = fetchDoodles;
+  window.fetchDoodle = fetchDoodle;
+  window.fetchUserDoodles = fetchUserDoodles;
+  window.storeDoodle = storeDoodle;
   window.dispatch = store.dispatch;
   //TESTING
 

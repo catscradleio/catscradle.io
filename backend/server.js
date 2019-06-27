@@ -44,8 +44,8 @@ app.use(bodyParser.json());
 const usersRouter = require('./routes/api/users');
 app.use('/api/users', usersRouter);
 
-const cradlesRouter = require('./routes/api/cradles');
-app.use('/api/cradles', cradlesRouter);
+const doodlesRouter = require('./routes/api/doodles');
+app.use('/api/doodles', doodlesRouter);
 
 /**
  * Run Express
