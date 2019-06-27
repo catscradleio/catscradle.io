@@ -1,19 +1,19 @@
-import { RECEIVE_CRADLE, RECEIVE_CRADLES} from '../actions/cradle_actions';
+import { RECEIVE_DOODLE, RECEIVE_DOODLES} from '../actions/doodle_actions';
 
-const CradlesReducer = (state = {}, action) => {
+const DoodlesReducer = (state = {}, action) => {
   Object.freeze(state);
   let newState = Object.assign({}, state);
 
   switch (action.type) {
-    case RECEIVE_CRADLES:
-      newState = action.cradles.data;
+    case RECEIVE_DOODLES:
+      newState = action.doodles.data;
       return newState;
-    case RECEIVE_CRADLE:
-      newState = [action.cradle.data];
+    case RECEIVE_DOODLE:
+      newState = [action.doodle.data];
       return newState;
     default:
       return state;
   }
 };
 
-export default CradlesReducer;
+export default DoodlesReducer;
