@@ -41,9 +41,9 @@ class NavBar extends React.Component {
             <div className={styles['navbuttonContainer']}>
               <div 
                   onClick={() => this.showModalSignup()}
-                  className={styles['buttonSignup']}>SIGNUP</div>
+                  className={styles['buttonSignup']}>SIGN UP</div>
             <div onClick={() => this.showModalLogin()}
-              className={styles['buttonLogin']}>SIGNIN</div>
+              className={styles['buttonLogin']}>SIGN IN</div>
             </div>
         );
       }
